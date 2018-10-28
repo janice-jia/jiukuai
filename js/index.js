@@ -64,8 +64,7 @@ function fixed(num) {
             }
         };
     }else if(isiOS) {
-        $(stickyEl).addClass('sticky');
-        console.log(11);
+        $(stickyEl).addClass('jk-screen');
     }
 }
 fixed(200);

@@ -276,5 +276,88 @@ a:focus {
   margin-bottom: 0.95rem; }
   .jk-wap .jk-ca-hot .jk-ca-hot-con {
     flex-wrap: wrap; }
+.jk-wap .jk-str {
+  font-size: 0.26rem;
+  color: #888888; }
+.jk-wap .jk-str-con {
+  margin: 0 0 0.16rem 0; }
+  .jk-wap .jk-str-con ul li {
+    height: 1.1rem;
+    line-height: 1.1rem;
+    font-size: 0.28rem;
+    color: #1e1e1e;
+    border-bottom: 1px solid #f4f4f4; }
+.jk-wap .jk-str-list {
+  position: fixed;
+  top: 1.4rem;
+  height: 100%;
+  right: 0;
+  width: 0.4rem;
+  text-align: center; }
+  .jk-wap .jk-str-list ul {
+    width: 0.4rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column; }
+    .jk-wap .jk-str-list ul li {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      flex: 1;
+      text-align: center;
+      color: #999999;
+      font-size: 0.18rem;
+      margin: 0.02rem 0; }
+      .jk-wap .jk-str-list ul li .str-index {
+        display: inline-block;
+        height: 0.4rem;
+        line-height: 0.4rem;
+        width: 0.4rem;
+        background: #f2f2f2;
+        border-radius: 50%; }
+      .jk-wap .jk-str-list ul li a {
+        color: #999999;
+        font-size: 0.18rem;
+        font-family: ArialMt; }
 
 /*切换城市  end*/
+/*搜索  start */
+.jk-wap .jk-searchbox {
+  margin: 0.2rem 0 0.3rem 0;
+  position: relative; }
+  .jk-wap .jk-searchbox input {
+    width: 100%;
+    height: 0.85rem;
+    border: 1px solid #f1f1f1;
+    border-radius: 0.45rem;
+    box-shadow: 0px 0px 0.05rem 0.05rem rgba(241, 241, 241, 0.2);
+    color: #1e1e1e;
+    font-weight: bold;
+    font-size: 0.3rem;
+    padding: 0 0.7rem 0 0.3rem; }
+  .jk-wap .jk-searchbox .jk-search-clear {
+    position: absolute;
+    right: 0.3rem;
+    top: 50%;
+    width: 0.3rem;
+    height: 0.3rem;
+    margin-top: -0.15rem;
+    background: pink;
+    display: inline-block;
+    background: url(../images/icon-clear.png) no-repeat;
+    background-size: 0.3rem; }
+.jk-wap .jk-searchList ul li {
+  height: 0.95rem;
+  line-height: 0.95rem;
+  border-bottom: 1px solid #dbdbdb; }
+  .jk-wap .jk-searchList ul li .jk-search-tit {
+    text-align: left;
+    font-size: 0.28rem;
+    color: #1e1e1e; }
+  .jk-wap .jk-searchList ul li .gray {
+    color: #999999; }
+  .jk-wap .jk-searchList ul li .jk-search-desc {
+    font-size: 0.26rem;
+    color: #999999; }
+
+/*搜索  end */
