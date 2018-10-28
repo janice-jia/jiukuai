@@ -10,10 +10,15 @@
     <script src="../js/flexible_css.js"></script>
     <script src="../js/index.js"></script>
     <script>
-        //首页搜索获取焦点之后跳转到搜索界面
         $(function() {
+            //首页搜索获取焦点之后跳转到搜索界面
             $("#searchText").focus(function(){
                window.location.href="./search.html";  
+            })
+
+            //点击区域，跳转到区域筛选界面 
+            $('#screenArea').click(function(){
+                window.location.href="./search_area.html";  
             })
         })
     </script>
@@ -46,7 +51,7 @@
         <div class="jk-screen">
             <div class="jk-screen-menu jkFlex">
                 <div class="jk-screen-menu-item jkFlexItem">
-                    <p>
+                    <p id="screenArea">
                         <span>区域</span>
                         <span class="icon-down"></span>
                     </p>
@@ -80,6 +85,10 @@
 
         <!-- 内容 -->
         <div class="jk-cont">
+            <div class="jk-banner">
+                此处预留banner位置
+                <!-- <img src="../images/cont-item.jpg" alt="" /> -->
+            </div>
             <div class="jk-cont-item jkFlex">
                 <div class="jk-cont-item-media">
                     <img src="../images/cont-item.jpg" alt="" />
