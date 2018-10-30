@@ -10,11 +10,6 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
 
-html,
-body {
-  width: 100%;
-  height: 100%; }
-
 body {
   font-family: "Microsoft YaHei","Arial","Helvetica Neue","Hiragino Sans GB","Simsun,sans-self";
   font-size: 0.28rem;

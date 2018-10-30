@@ -1,6 +1,6 @@
 //designWidth:设计稿的实际宽度值，需要根据实际设置
 //maxWidth:制作稿的最大宽度值，需要根据实际设置
-;(function(designWidth, maxWidth) {
+(function(designWidth, maxWidth) {
     var doc = document,
     win = window,
     docEl = doc.documentElement,
@@ -45,26 +45,33 @@
             doc.body.style.fontSize = "16px";
         }, false);
     }
+
+
+
+
+
+
+    //吸顶条
+    var stickyEl = document.querySelector('.jk-screen');
+    function fixed(num) {
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; 
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); 
+        if(isAndroid) {
+            window.onscroll = function(e) {
+                var scrollT = document.documentElement.scrollTop;
+                if (scrollT > num) {
+                    $(stickyEl).addClass('fixed-top');
+                }else {
+                    $(stickyEl).removeClass('fixed-top');
+                }
+            };
+        }else if(isiOS) {
+            $(stickyEl).addClass('sticky');
+        }
+    }
+    fixed(200);
+
 })(750, 750);
 
 
-//吸顶条
-var stickyEl = document.querySelector('.jk-screen');
-function fixed(num) {
-    var u = navigator.userAgent;
-    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; 
-    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); 
-    if(isAndroid) {
-        document.body.onscroll = function(e) {
-            var scrollT = document.body.scrollTop;
-            if (scrollT > num) {
-                $(stickyEl).addClass('fixed-top');
-            }else {
-                $(stickyEl).removeClass('fixed-top');
-            }
-        };
-    }else if(isiOS) {
-        $(stickyEl).addClass('jk-screen');
-    }
-}
-fixed(200);

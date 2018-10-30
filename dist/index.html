@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>玖快租房</title>
+    <link rel="stylesheet" href="./dist/index.css" />
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/flexible_css.js"></script>
+    <script src="./js/index.js"></script>
+    <script>
+        $(function() {
+            //首页搜索获取焦点之后跳转到搜索界面
+            $("#searchText").focus(function(){
+               window.location.href="./search.html";  
+            })
+
+            //点击区域，跳转到区域筛选界面 
+            $('#screenArea').click(function(){
+                window.location.href="./search_area.html";  
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="jk-wap">
+        <!-- 搜索 -->
+        <div class="jk-search jkFlex">
+            <a href="./changeAddress.html" class="jk-search-address">北京</a>
+            <input class="jk-search-text jkFlexItem" id="searchText" type="text" placeholder="您想住哪？"/>
+        </div>
+
+        <!-- 导航 -->
+        <div class="jk-menu jkFlex">
+            <div class="jk-menu-item jkFlexItem">
+                <img src="./images/menu-item-1.png" alt="整租" />
+                <p>整租</p>
+            </div>
+            <div class="jk-menu-item jkFlexItem">
+                <img src="./images/menu-item-2.png" alt="合租" />
+                <p>合租</p>
+            </div>
+            <div class="jk-menu-item jkFlexItem">
+                <img src="./images/menu-item-3.png" alt="短租" />
+                <p>短租</p>
+            </div>
+        </div>
+
+        <!-- 筛选 -->
+        <div class="jk-screen">
+            <div class="jk-screen-menu jkFlex">
+                <div class="jk-screen-menu-item jkFlexItem">
+                    <p id="screenArea">
+                        <span>区域</span>
+                        <span class="icon-down"></span>
+                    </p>
+                </div>
+                <div class="jk-screen-menu-item jkFlexItem">
+                    <p>
+                        <span>租金</span>
+                        <span class="icon-down"></span>
+                    </p>
+                </div>
+                <div class="jk-screen-menu-item jkFlexItem">
+                    <p>
+                        <span>户型</span>
+                        <span class="icon-down"></span>
+                    </p>
+                </div>
+                <div class="jk-screen-menu-item jkFlexItem">
+                    <p>
+                        <span>筛选</span>
+                        <span class="icon-down"></span>
+                    </p>
+                </div>
+                <div class="jk-screen-menu-item">
+                    <p>
+                        <img src="./images/icon-sort.png" alt="排序"/>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 内容 -->
+        <div class="jk-cont">
+            <div class="jk-banner">
+                此处预留banner位置
+                <!-- <img src="./images/cont-item.jpg" alt="" /> -->
+            </div>
+            <div class="jk-cont-item jkFlex">
+                <div class="jk-cont-item-media">
+                    <img src="./images/cont-item.jpg" alt="" />
+                </div>
+                <div class="jk-cont-item-main jkFlexItem">
+                    <div class="jk-cont-item-tit oneLine">
+                        合租。丰西北里3居室-南卧
+                    </div>
+                    <div class="jk-cont-item-price oneLine">
+                        1700元/月
+                    </div>
+                    <div class="jk-cont-item-desc oneLine">
+                        15m²|南|看丹桥
+                    </div>
+                    <div class="jk-cont-item-tag oneLine">
+                        押一付一|独立卫浴|有阳台
+                    </div>
+                </div>
+            </div>
+            <div class="jk-cont-item jkFlex">
+                <div class="jk-cont-item-media">
+                    <img src="./images/cont-item.jpg" alt="" />
+                </div>
+                <div class="jk-cont-item-main jkFlexItem">
+                    <div class="jk-cont-item-tit oneLine">
+                        合租。丰西北里3居室-南卧
+                    </div>
+                    <div class="jk-cont-item-price oneLine">
+                        1700元/月
+                    </div>
+                    <div class="jk-cont-item-desc oneLine">
+                        15m²|南|看丹桥
+                    </div>
+                    <div class="jk-cont-item-tag oneLine">
+                        押一付一|独立卫浴|有阳台
+                    </div>
+                </div>
+            </div>
+            <div class="jk-cont-item jkFlex">
+                <div class="jk-cont-item-media">
+                    <img src="./images/cont-item.jpg" alt="" />
+                </div>
+                <div class="jk-cont-item-main jkFlexItem">
+                    <div class="jk-cont-item-tit oneLine">
+                        合租。丰西北里3居室-南卧
+                    </div>
+                    <div class="jk-cont-item-price oneLine">
+                        1700元/月
+                    </div>
+                    <div class="jk-cont-item-desc oneLine">
+                        15m²|南|看丹桥
+                    </div>
+                    <div class="jk-cont-item-tag oneLine">
+                        押一付一|独立卫浴|有阳台
+                    </div>
+                </div>
+            </div>
+            <div class="jk-cont-item jkFlex">
+                <div class="jk-cont-item-media">
+                    <img src="./images/cont-item.jpg" alt="" />
+                </div>
+                <div class="jk-cont-item-main jkFlexItem">
+                    <div class="jk-cont-item-tit oneLine">
+                        合租。丰西北里3居室-南卧
+                    </div>
+                    <div class="jk-cont-item-price oneLine">
+                        1700元/月
+                    </div>
+                    <div class="jk-cont-item-desc oneLine">
+                        15m²|南|看丹桥
+                    </div>
+                    <div class="jk-cont-item-tag oneLine">
+                        押一付一|独立卫浴|有阳台
+                    </div>
+                </div>
+            </div>
+            <div class="jk-cont-item jkFlex">
+                <div class="jk-cont-item-media">
+                    <img src="./images/cont-item.jpg" alt="" />
+                </div>
+                <div class="jk-cont-item-main jkFlexItem">
+                    <div class="jk-cont-item-tit oneLine">
+                        合租。丰西北里3居室-南卧
+                    </div>
+                    <div class="jk-cont-item-price oneLine">
+                        1700元/月
+                    </div>
+                    <div class="jk-cont-item-desc oneLine">
+                        15m²|南|看丹桥
+                    </div>
+                    <div class="jk-cont-item-tag oneLine">
+                        押一付一|独立卫浴|有阳台
+                    </div>
+                </div>
+            </div>
+            <div class="jk-cont-item jkFlex">
+                <div class="jk-cont-item-media">
+                    <img src="./images/cont-item.jpg" alt="" />
+                </div>
+                <div class="jk-cont-item-main jkFlexItem">
+                    <div class="jk-cont-item-tit oneLine">
+                        合租。丰西北里3居室-南卧
+                    </div>
+                    <div class="jk-cont-item-price oneLine">
+                        1700元/月
+                    </div>
+                    <div class="jk-cont-item-desc oneLine">
+                        15m²|南|看丹桥
+                    </div>
+                    <div class="jk-cont-item-tag oneLine">
+                        押一付一|独立卫浴|有阳台
+                    </div>
+                </div>
+            </div>
+            <div class="jk-cont-item jkFlex">
+                <div class="jk-cont-item-media">
+                    <img src="./images/cont-item.jpg" alt="" />
+                </div>
+                <div class="jk-cont-item-main jkFlexItem">
+                    <div class="jk-cont-item-tit oneLine">
+                        合租。丰西北里3居室-南卧
+                    </div>
+                    <div class="jk-cont-item-price oneLine">
+                        1700元/月
+                    </div>
+                    <div class="jk-cont-item-desc oneLine">
+                        15m²|南|看丹桥
+                    </div>
+                    <div class="jk-cont-item-tag oneLine">
+                        押一付一|独立卫浴|有阳台
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 底部导航 -->
+        <div class="jk-nav jkFlex">
+            <div class="jk-nav-item jkFlexItem nav-hover">
+                <a class="nav-link" href="a.html"></a>
+                <div class="jk-nav-item-icon nav-icon01"></div>
+                <p>首页</p>
+            </div>
+            <div class="jk-nav-item jkFlexItem">
+                <a class="nav-link" href="a.html"></a>
+                <div class="jk-nav-item-icon nav-icon02"></div>
+                <p>发布</p>
+            </div>
+            <div class="jk-nav-item jkFlexItem">
+                <a class="nav-link" href="a.html"></a>
+                <div class="jk-nav-item-icon nav-icon03"></div>
+                <p>我</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
