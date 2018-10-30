@@ -79,6 +79,32 @@ a:focus {
 .tl {
   text-align: left; }
 
+.tag-parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.2rem; }
+
+.jk-ca-tag {
+  display: inline-block;
+  height: 0.58rem;
+  line-height: 0.58rem;
+  border-radius: 0.05rem;
+  background: #f8f8f8;
+  color: #1e1e1e;
+  font-size: 0.28rem;
+  min-width: 1.28rem;
+  text-align: center;
+  padding: 0 0.1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical; }
+
+.tag-hover {
+  background: rgba(94, 144, 243, 0.5);
+  color: #2c6adb; }
+
 /*首页  start*/
 .jk-wap {
   padding: 0 0.15rem 1.15rem 0.15rem;
@@ -137,42 +163,6 @@ a:focus {
         font-size: 0.24rem;
         margin-top: 0.05rem;
         color: black; }
-  .jk-wap .jk-screen {
-    /*滚过初始位置时自动吸顶*/
-    position: -webkit-sticky;
-    position: sticky;
-    /*吸顶时的定位*/
-    top: 0;
-    left: 0;
-    background: white;
-    /*z比下方所有z高*/ }
-    .jk-wap .jk-screen .jk-screen-menu {
-      border-bottom: 2px solid #d6d6d6;
-      height: 0.9rem; }
-      .jk-wap .jk-screen .jk-screen-menu .jk-screen-menu-item p {
-        line-height: 0.9rem;
-        font-size: 0.24rem;
-        color: #333333;
-        height: 100%;
-        display: flex;
-        justify-content: left; }
-        .jk-wap .jk-screen .jk-screen-menu .jk-screen-menu-item p img {
-          width: 0.2rem;
-          height: 0.22rem;
-          margin: 0.34rem 0.25rem 0 0; }
-        .jk-wap .jk-screen .jk-screen-menu .jk-screen-menu-item p span {
-          line-height: 0.9rem;
-          height: 100%;
-          display: inline-block; }
-        .jk-wap .jk-screen .jk-screen-menu .jk-screen-menu-item p .icon-down {
-          width: 0.1rem;
-          height: 0.1rem;
-          background: url(../images/icon-down.png) no-repeat center;
-          margin: 0.4rem 0 0 0.1rem; }
-      .jk-wap .jk-screen .jk-screen-menu .screen-menu-hover p {
-        color: #2c6adb; }
-        .jk-wap .jk-screen .jk-screen-menu .screen-menu-hover p .icon-down {
-          background: url(../images/icon-down-blue.png) no-repeat center; }
   .jk-wap .jk-cont .jk-banner {
     background: #999999;
     height: 1.5rem;
@@ -265,24 +255,10 @@ a:focus {
   font-size: 0.26rem;
   color: #1e1e1e;
   margin: 0 0 0.2rem 0; }
-.jk-wap .jk-ca-tag {
-  display: inline-block;
-  margin: 0 0.1rem 0.1rem 0;
-  height: 0.58rem;
-  line-height: 0.58rem;
-  border-radius: 0.05rem;
-  background: #f8f8f8;
-  color: #1e1e1e;
-  font-size: 0.28rem;
-  min-width: 1.28rem;
-  text-align: center;
-  padding: 0 0.1rem; }
-.jk-wap .tag-hover {
-  background: rgba(94, 144, 243, 0.5);
-  color: #2c6adb; }
 .jk-wap .jk-ca-position {
   margin: 0 0 0.54rem 0; }
 .jk-wap .jk-ca-hot {
+  padding-right: 0.3rem;
   margin-bottom: 0.95rem; }
   .jk-wap .jk-ca-hot .jk-ca-hot-con {
     flex-wrap: wrap; }
@@ -371,38 +347,117 @@ a:focus {
     color: #999999; }
 
 /*搜索  end */
-/*区域搜索 start*/
-.jk-wap .jk-screen-form {
-  height: 100%; }
-.jk-wap .jk-screen-box {
+/*筛选弹层 start*/
+.jk-screen {
+  /*滚过初始位置时自动吸顶*/
+  position: -webkit-sticky;
+  position: sticky;
+  /*吸顶时的定位*/
+  top: 0;
+  left: 0;
+  background: white;
+  /*z比下方所有z高*/ }
+  .jk-screen .jk-screen-menu {
+    border-bottom: 2px solid #d6d6d6;
+    height: 0.9rem; }
+    .jk-screen .jk-screen-menu .jk-screen-menu-item {
+      text-align: left;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      flex: 1; }
+      .jk-screen .jk-screen-menu .jk-screen-menu-item:last-child {
+        -webkit-box-flex: none;
+        -webkit-flex: none;
+        flex: none; }
+      .jk-screen .jk-screen-menu .jk-screen-menu-item p.jkScreenNav {
+        line-height: 0.9rem;
+        font-size: 0.24rem;
+        color: #333333;
+        height: 100%;
+        display: flex;
+        justify-content: left;
+        display: inline-block; }
+        .jk-screen .jk-screen-menu .jk-screen-menu-item p.jkScreenNav img {
+          width: 0.2rem;
+          height: 0.22rem;
+          margin: 0.34rem 0.25rem 0 0; }
+        .jk-screen .jk-screen-menu .jk-screen-menu-item p.jkScreenNav span {
+          line-height: 0.9rem;
+          height: 100%;
+          display: inline-block; }
+        .jk-screen .jk-screen-menu .jk-screen-menu-item p.jkScreenNav .icon-down {
+          width: 0.1rem;
+          height: 0.1rem;
+          background: url(../images/icon-down.png) no-repeat center;
+          margin: 0.4rem 0 0 0.1rem; }
+    .jk-screen .jk-screen-menu .screen-menu-hover p.jkScreenNav {
+      color: #2c6adb; }
+      .jk-screen .jk-screen-menu .screen-menu-hover p.jkScreenNav .icon-down {
+        background: url(../images/icon-down-blue.png) no-repeat center; }
+
+.jkScreen {
+  position: fixed;
   height: 100%;
-  padding: 0 0 1.45rem 0; }
-  .jk-wap .jk-screen-box .jk-screen-cont {
+  width: 100%;
+  background: white;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  display: none;
+  padding: 0 0.15rem 0 0.15rem; }
+  .jkScreen .jkScreenItem {
+    display: none;
     height: 100%; }
-    .jk-wap .jk-screen-box .jk-screen-cont .jk-screen-ui li {
+    .jkScreen .jkScreenItem form {
+      height: 100%; }
+    .jkScreen .jkScreenItem .jkscreenHouseType .jk-screenScreen-tit,
+    .jkScreen .jkScreenItem .jkscreenHouseType .jk-houseType-tit, .jkScreen .jkScreenItem .jkscreenScreen .jk-screenScreen-tit,
+    .jkScreen .jkScreenItem .jkscreenScreen .jk-houseType-tit {
       font-size: 0.28rem;
       color: #666666;
-      padding: 0.32rem 0; }
-      .jk-wap .jk-screen-box .jk-screen-cont .jk-screen-ui li.shover {
-        color: #2c6adb; }
-  .jk-wap .jk-screen-box .screenBg {
-    background: #fafafa; }
-.jk-wap .jk-screen-btn {
-  width: 100%;
-  height: 1.45rem;
-  background: white;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  padding: 0 0.15rem; }
-  .jk-wap .jk-screen-btn .blue-btn {
-    margin: 0.25rem 0;
+      text-align: center;
+      margin: 0.8rem 0 0.4rem 0; }
+    .jkScreen .jkScreenItem .jkscreenHouseType .jk-screenScreen-con .jk-ca-tag,
+    .jkScreen .jkScreenItem .jkscreenHouseType .jk-houseType-con .jk-ca-tag, .jkScreen .jkScreenItem .jkscreenScreen .jk-screenScreen-con .jk-ca-tag,
+    .jkScreen .jkScreenItem .jkscreenScreen .jk-houseType-con .jk-ca-tag {
+      color: #666666; }
+    .jkScreen .jkScreenItem .jkscreenHouseType .jk-screenScreen-con .tag-hover,
+    .jkScreen .jkScreenItem .jkscreenHouseType .jk-houseType-con .tag-hover, .jkScreen .jkScreenItem .jkscreenScreen .jk-screenScreen-con .tag-hover,
+    .jkScreen .jkScreenItem .jkscreenScreen .jk-houseType-con .tag-hover {
+      color: #2c6adb; }
+  .jkScreen .jk-screen-form {
+    height: 100%; }
+  .jkScreen .jk-screen-box {
+    height: 100%;
+    padding: 0 0 1.45rem 0; }
+    .jkScreen .jk-screen-box .jk-screen-cont {
+      height: 100%; }
+      .jkScreen .jk-screen-box .jk-screen-cont .jk-screen-ui li {
+        font-size: 0.28rem;
+        color: #666666;
+        padding: 0.32rem 0; }
+        .jkScreen .jk-screen-box .jk-screen-cont .jk-screen-ui li.shover {
+          color: #2c6adb; }
+    .jkScreen .jk-screen-box .screenBg {
+      background: #fafafa; }
+    .jkScreen .jk-screen-box .screenBg1 {
+      background: #f7f7f7; }
+  .jkScreen .jk-screen-btn {
     width: 100%;
-    height: 0.95rem;
-    line-height: 0.96rem;
-    color: white;
-    font-size: 0.28rem;
-    border-radius: 0.1rem;
-    background: #2c6adb; }
+    height: 1.45rem;
+    background: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0 0.15rem; }
+    .jkScreen .jk-screen-btn .blue-btn {
+      margin: 0.25rem 0;
+      width: 100%;
+      height: 0.95rem;
+      line-height: 0.96rem;
+      color: white;
+      font-size: 0.28rem;
+      border-radius: 0.1rem;
+      background: #2c6adb; }
 
-/*区域搜索 end*/
+/*筛选弹层 end*/

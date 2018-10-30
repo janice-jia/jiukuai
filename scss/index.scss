@@ -63,6 +63,8 @@ a:focus{
     font-family: "Microsoft YaHei";
 }
 
+
+// 公用start
 .jkFlex{
     display: -webkit-box;
     display: -webkit-flex;
@@ -85,6 +87,36 @@ a:focus{
 .tl{
     text-align: left;
 }
+
+.tag-parent{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-gap:0.2rem;
+}
+.jk-ca-tag{
+    display: inline-block;
+    height: 0.58rem;
+    line-height: 0.58rem;
+    border-radius: 0.05rem;
+    background: rgb(248,248,248);
+    color: rgb(30, 30, 30);
+    font-size: 0.28rem;
+    min-width: 1.28rem;
+    text-align: center;
+    padding: 0 0.1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.tag-hover{
+    background: rgba(94,144,243,0.5);
+    color: rgb(44,106,219);
+}
+// 公用end
+
+
 /*首页  start*/
 .jk-wap{
     padding: 0 0.15rem 1.15rem 0.15rem;
@@ -157,55 +189,6 @@ a:focus{
         }
     }
 
-    // 筛选
-    .jk-screen{
-        /*滚过初始位置时自动吸顶*/
-        position: -webkit-sticky;
-        position: sticky;
-        /*吸顶时的定位*/
-        top: 0;
-        left: 0;
-        background: rgb(255, 255, 255);
-        /*z比下方所有z高*/
-        .jk-screen-menu{
-            border-bottom:2px solid rgb(214,214,214);
-            height: 0.9rem;
-            .jk-screen-menu-item {
-                p{
-                    line-height: 0.9rem;
-                    font-size: 0.24rem;
-                    color: rgb(51,51,51);
-                    height: 100%;
-                    display: flex;
-                    justify-content: left;
-                    img{
-                        width: 0.2rem;
-                        height: 0.22rem;
-                        margin: 0.34rem 0.25rem 0 0;
-                    }
-                    span{
-                        line-height: 0.9rem;
-                        height: 100%;
-                        display: inline-block;
-                    }
-                    .icon-down{
-                        width: 0.1rem;
-                        height: 0.1rem;
-                        background: url(../images/icon-down.png) no-repeat center;
-                        margin: 0.4rem 0 0 0.1rem;
-                    }
-                }
-            }
-            .screen-menu-hover{
-                p{
-                    color: rgb(44,106,219);  
-                    .icon-down{
-                        background: url(../images/icon-down-blue.png) no-repeat center;
-                    }
-                }
-            }
-        }
-    }
 
     // 内容
     .jk-cont{
@@ -335,27 +318,11 @@ a:focus{
         color: rgb(30, 30, 30);
         margin: 0 0 0.2rem 0;
     }
-    .jk-ca-tag{
-        display: inline-block;
-        margin: 0 0.1rem 0.1rem 0;
-        height: 0.58rem;
-        line-height: 0.58rem;
-        border-radius: 0.05rem;
-        background: rgb(248,248,248);
-        color: rgb(30, 30, 30);
-        font-size: 0.28rem;
-        min-width: 1.28rem;
-        text-align: center;
-        padding: 0 0.1rem;
-    }
-    .tag-hover{
-        background: rgba(94,144,243,0.5);
-        color: rgb(44,106,219);
-    }
     .jk-ca-position{
         margin: 0 0 0.54rem 0;
     }
     .jk-ca-hot{
+        padding-right: 0.3rem;
         margin-bottom: 0.95rem;
         .jk-ca-hot-con{
             flex-wrap: wrap;
@@ -477,8 +444,108 @@ a:focus{
 }
 /*搜索  end */
 
-/*区域搜索 start*/
-.jk-wap{
+/*筛选弹层 start*/
+// 筛选nav
+.jk-screen{
+    /*滚过初始位置时自动吸顶*/
+    position: -webkit-sticky;
+    position: sticky;
+    /*吸顶时的定位*/
+    top: 0;
+    left: 0;
+    background: rgb(255, 255, 255);
+    /*z比下方所有z高*/
+    .jk-screen-menu{
+        border-bottom:2px solid rgb(214,214,214);
+        height: 0.9rem;
+        .jk-screen-menu-item {
+            text-align: left;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            &:last-child{
+                -webkit-box-flex: none;
+                -webkit-flex: none;
+                flex: none;
+            }
+            p.jkScreenNav{
+                line-height: 0.9rem;
+                font-size: 0.24rem;
+                color: rgb(51,51,51);
+                height: 100%;
+                display: flex;
+                justify-content: left;
+                display: inline-block;
+                img{
+                    width: 0.2rem;
+                    height: 0.22rem;
+                    margin: 0.34rem 0.25rem 0 0;
+                }
+                span{
+                    line-height: 0.9rem;
+                    height: 100%;
+                    display: inline-block;
+                }
+                .icon-down{
+                    width: 0.1rem;
+                    height: 0.1rem;
+                    background: url(../images/icon-down.png) no-repeat center;
+                    margin: 0.4rem 0 0 0.1rem;
+                }
+            }
+        }
+        .screen-menu-hover{
+            p.jkScreenNav{
+                color: rgb(44,106,219);  
+                .icon-down{
+                    background: url(../images/icon-down-blue.png) no-repeat center;
+                }
+            }
+        }
+    }
+}
+
+.jkScreen{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background:rgb(255, 255, 255);
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    display: none;
+    padding: 0 0.15rem 0 0.15rem;
+    .jkScreenItem{
+        display: none;
+        height: 100%;
+        form{
+            height: 100%;
+        }
+
+        // 户型、筛选
+        .jkscreenHouseType,.jkscreenScreen{
+            
+            .jk-screenScreen-tit,
+            .jk-houseType-tit{
+                font-size: 0.28rem;
+                color: rgb(102,102,102);
+                text-align: center;
+                margin: 0.8rem 0 0.4rem 0;
+            }
+            
+            .jk-screenScreen-con,
+            .jk-houseType-con{
+                .jk-ca-tag{
+                    color: rgb(102,102,102);
+                }
+                .tag-hover{
+                    color: rgb(44,106,219);
+                }
+            }
+            
+        }
+        
+    }
     .jk-screen-form{
         height: 100%;
     }
@@ -500,6 +567,9 @@ a:focus{
         }
         .screenBg{
             background: rgb(250,250,250);
+        }
+        .screenBg1{
+            background: rgb(247,247,247);
         }
     }
     .jk-screen-btn{
@@ -523,7 +593,7 @@ a:focus{
     }
 }
 
-/*区域搜索 end*/
+/*筛选弹层 end*/
 
 
 
