@@ -121,6 +121,9 @@ a:focus{
     white-space: nowrap;
     position: relative;
 }
+.jkClear{
+    clear: both;
+}
 // 公用end
 
 
@@ -643,23 +646,90 @@ a:focus{
 
 
 /*房源信息  start*/
-.jk-house{
-    width: 100%;
-    .jk-house-banner{
-        img{
-            height: 0.4.5rem;
-        }
+.jk-house-banner{
+    margin: 0 auto;
+    img{
+        width: 100%;
+        max-height: 5.62rem;
     }
+}
+.jk-house{
+    padding: 0 0.36rem;
     .jk-house-name{
         font-size: 0.46rem;
         color: rgb(51,51,51);
+        margin: 0.6rem 0 0 0;
     }
     .jk-house-price{
         font-size: 0.46rem;
         color: rgb(228,46,0);
+        margin: 0.43rem 0 0;
+    }
+    .jk-house-tagbox{
+        margin: 0.25rem 0 0 0;
+        .jk-ca-tag{
+            background: rgb(255, 255, 255);
+            border: 2px solid rgb(246,246,246);
+            font-size: 0.22rem;
+            color: rgb(119,119,119);
+        }
+    }
+    .jk-house-desc{
+        margin: 0.85rem 0 0 0;
+        border-bottom: 1px solid rgb(223,223,223);
+        padding-bottom: 0.4rem;
+        .jkFlexItem{
+            font-size: 0.26rem;
+            color: rgb(51,51,51);
+            position: relative;
+            &:before{
+                content: "|";
+                position: absolute;
+                right: 0;
+                top: 0;
+                font-size: 0.26px;
+                color: rgb(223,223,223);
+            }
+            &:last-child{
+                &::before{
+                    display: none;
+                }
+            }
+        }
+    }
+    .jk-house-desc1{
+        padding: 0.5rem 0;
+        .houseinfo{
+            clear: both;
+            .houseinfoitem{
+                width: 50%;
+                float: left;
+                span{
+                    display: inline-block;
+                    float: left;
+                }
+                .desclabel{
+                    color: rgb(153, 153, 153);
+                    width: 2em;
+                    margin: 0 0.2rem 0 0;
+                    overflow: hidden;
+                    font-size: 0.26rem;
+                    line-height: 0.52rem;
+                }
+                .desccon{
+                    font-size: 0.26rem;
+                    line-height: 0.52rem;
+                    color: rgb(51,51,51);
+                }
+            }
+        }
+    }
+    
+    .jk-house-tit{
+        clear: both;
+        font-size: 0.4rem;
+        color: rgb(51,51,51);
     }
 }
 /*房源信息  end*/
-
-
 
