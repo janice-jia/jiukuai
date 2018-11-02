@@ -89,12 +89,23 @@ a:focus{
 }
 
 .tag-parent{
-    display: grid;
-    grid-template-columns:repeat(4,1fr);
-    grid-gap:0.2rem;
+    // display: grid;
+    // grid-template-columns:repeat(4,1fr);
+    // grid-gap:0.2rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-left: -0.15rem !important;
+}
+.jk-tag-4{
+    flex: 25%;
+    max-width: 25%;
+    display: inline-block;
 }
 .jk-ca-tag{
-    display: inline-block;
+    margin: 0 0 0.15rem 0.15rem;
     height: 0.58rem;
     line-height: 0.58rem;
     border-radius: 0.05rem;
@@ -729,6 +740,61 @@ a:focus{
         clear: both;
         font-size: 0.4rem;
         color: rgb(51,51,51);
+    }
+
+    .jk-house-configTag{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 0.5rem 0 0.2rem 0;
+        .jk-house-config-tag-item{
+            flex: 16.66%;
+            max-width: 16.66%;
+            .jk-house-conimg{
+                max-height: 0.5rem;
+                text-align: center;
+                height: 0.5rem;
+                img{
+                    max-width: 0.5rem;
+                    max-height: 0.5rem;
+                }
+            }
+            .jk-house-conTit{
+                padding: 0.26rem 0 0.4rem 0;
+                font-size: 0.22rem;
+                color: rgb(51,51,51);
+                text-align: center;
+            }
+        }
+    }
+
+    .jk-house-map{
+        height: 2.16rem;
+        margin: 0.5rem 0 0.3rem 0;
+        img{
+            max-height: 2.16rem;
+        }
+    }
+
+    .jk-house-mapgood{
+        ul{
+            li{
+                font-size: 0.2rem;
+                color: rgb(51,51,51);
+                padding: 0 0 0.15rem 0.25rem;
+                position: relative;
+                &:before{
+                    content: '';
+                    height: 3px;
+                    width: 3px;
+                    background: rgb(51,51,51);
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 0.12rem;
+                    top: 0.12rem;
+                }
+            }
+        }
     }
 }
 /*房源信息  end*/
