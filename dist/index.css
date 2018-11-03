@@ -79,6 +79,9 @@ a:focus {
 .tl {
   text-align: left; }
 
+.tr {
+  text-align: right; }
+
 .tag-parent {
   display: -webkit-box;
   display: -webkit-flex;
@@ -86,6 +89,11 @@ a:focus {
   width: 100%;
   flex-wrap: wrap;
   margin-left: -0.15rem !important; }
+
+.jk-tag-2 {
+  flex: 50%;
+  max-width: 50%;
+  display: inline-block; }
 
 .jk-tag-4 {
   flex: 25%;
@@ -121,6 +129,58 @@ a:focus {
 
 .jkClear {
   clear: both; }
+
+.houseLink {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 22; }
+
+.jk-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 1.4rem;
+  width: 100%;
+  background: white;
+  padding: 0 0.3rem;
+  z-index: 50;
+  box-shadow: 0px -0.5rem 0.5rem rgba(248, 248, 248, 0.6); }
+
+.jk-oneBtn-bottom {
+  margin-top: 0.23rem;
+  width: 100%;
+  height: 0.96rem;
+  font-size: 0.28rem;
+  color: white;
+  border-radius: 0.15rem;
+  background: linear-gradient(to right, #5e90f3, #2c6adb); }
+
+.jkBottomFlex2 {
+  height: 100%;
+  background: white; }
+  .jkBottomFlex2 .jkFlexItem {
+    height: 100%; }
+    .jkBottomFlex2 .jkFlexItem:first-child {
+      border-right: 1px solid #d7d5d5; }
+  .jkBottomFlex2 .jkBottomBtn2 {
+    margin-top: 0.23rem;
+    width: 100%;
+    height: 0.96rem;
+    line-height: 0.96rem;
+    display: inline-block;
+    text-align: center;
+    font-size: 0.34rem;
+    color: #555555;
+    background: none; }
+  .jkBottomFlex2 .jkShareWechat img {
+    margin: 0.15rem 0 0.1rem 0;
+    max-height: 0.58rem; }
+  .jkBottomFlex2 .jkShareWechatTit {
+    font-size: 0.28rem;
+    color: #333333; }
 
 /*首页  start*/
 .jk-wap {
@@ -191,13 +251,6 @@ a:focus {
     padding: 0.3rem 0;
     border-bottom: 0.03rem solid #e5e5e5;
     position: relative; }
-    .jk-wap .jk-cont .jk-cont-item .houseLink {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 22; }
     .jk-wap .jk-cont .jk-cont-item .jk-cont-item-media img {
       width: 2.4rem; }
     .jk-wap .jk-cont .jk-cont-item .jk-cont-item-main {
@@ -514,13 +567,32 @@ a:focus {
 /*筛选弹层 end*/
 /*房源信息  start*/
 .jk-house-banner {
-  margin: 0 auto; }
+  margin: 0 auto;
+  max-height: 5.62rem;
+  position: relative;
+  max-width: 100%;
+  width: 100%; }
+  .jk-house-banner .swiper-wrapper {
+    max-width: 100%; }
   .jk-house-banner img {
     width: 100%;
     max-height: 5.62rem; }
+  .jk-house-banner .swiper-pagination-top {
+    padding: 0 0.3rem;
+    position: absolute;
+    bottom: 0;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    width: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 20;
+    font-size: 0.24rem;
+    color: white;
+    text-align: right; }
 
 .jk-house {
-  padding: 0 0.36rem; }
+  padding: 0 0.36rem 1.4rem 0.36rem; }
   .jk-house .jk-house-name {
     font-size: 0.46rem;
     color: #333333;
@@ -603,19 +675,195 @@ a:focus {
     margin: 0.5rem 0 0.3rem 0; }
     .jk-house .jk-house-map img {
       max-height: 2.16rem; }
-  .jk-house .jk-house-mapgood ul li {
-    font-size: 0.2rem;
-    color: #333333;
-    padding: 0 0 0.15rem 0.25rem;
-    position: relative; }
-    .jk-house .jk-house-mapgood ul li:before {
-      content: '';
-      height: 3px;
-      width: 3px;
-      background: #333333;
-      border-radius: 50%;
-      position: absolute;
-      left: 0.12rem;
-      top: 0.12rem; }
+  .jk-house .jk-house-mapgood ul {
+    margin-bottom: 0.55rem; }
+    .jk-house .jk-house-mapgood ul li {
+      font-size: 0.2rem;
+      color: #333333;
+      padding: 0 0 0.15rem 0.25rem;
+      position: relative; }
+      .jk-house .jk-house-mapgood ul li:before {
+        content: '';
+        height: 3px;
+        width: 3px;
+        background: #333333;
+        border-radius: 50%;
+        position: absolute;
+        left: 0.12rem;
+        top: 0.12rem; }
+  .jk-house .jk-recommend {
+    margin: 0.5rem 0 0 0;
+    max-width: 100%; }
+    .jk-house .jk-recommend .jk-recommend-item {
+      max-width: 3.24rem;
+      margin-right: 20px;
+      position: relative;
+      float: left; }
+      .jk-house .jk-recommend .jk-recommend-item .jk-recommend-img img {
+        max-width: 3.24rem;
+        max-height: 2,44rem; }
+      .jk-house .jk-recommend .jk-recommend-item .jk-recommend-con .jk-recommend-conTit {
+        font-size: 0.3rem;
+        color: #6e6565;
+        margin-bottom: 0.15rem; }
+      .jk-house .jk-recommend .jk-recommend-item .jk-recommend-con .jk-recommend-conDesc {
+        font-size: 0.26rem;
+        color: #333333;
+        margin-bottom: 0.15rem; }
+      .jk-house .jk-recommend .jk-recommend-item .jk-recommend-con .jk-recommend-conPrice {
+        font-size: 0.26rem;
+        color: #e45000;
+        margin-bottom: 0.15rem; }
+      .jk-house .jk-recommend .jk-recommend-item .jk-recommend-con .jk-recommend-tag .jk-ca-tag {
+        height: 0.5rem;
+        line-height: 0.5rem;
+        font-size: 0.24rem;
+        color: #777777; }
+  .jk-house .jk-icon {
+    clear: both;
+    margin-bottom: 0.75rem; }
+    .jk-house .jk-icon .jk-icon-jk {
+      font-size: 0.3rem;
+      color: #999999;
+      text-align: center;
+      line-height: 0.3rem;
+      padding: 1rem 0 0.26rem 0; }
+      .jk-house .jk-icon .jk-icon-jk img {
+        height: 0.3rem;
+        display: inline-block; }
+    .jk-house .jk-icon .jk-icon-desc {
+      font-size: 0.24rem;
+      color: #999999;
+      text-align: center; }
+  .jk-house .jk-share .jk-share-left {
+    width: 40%;
+    float: left; }
+    .jk-house .jk-share .jk-share-left .jk-shareleftitem {
+      position: relative;
+      max-width: 0.9rem; }
+      .jk-house .jk-share .jk-share-left .jk-shareleftitem .jk-like {
+        background: url(../images/icon-like.png) no-repeat center;
+        background-size: 0.4rem 0.36rem; }
+      .jk-house .jk-share .jk-share-left .jk-shareleftitem .jklikehover {
+        background: url(../images/icon-like-hover.png) no-repeat center;
+        background-size: 0.4rem 0.36rem; }
+      .jk-house .jk-share .jk-share-left .jk-shareleftitem .jk-shareleftitemimg {
+        height: 0.9rem;
+        padding-top: 0.33rem; }
+        .jk-house .jk-share .jk-share-left .jk-shareleftitem .jk-shareleftitemimg img {
+          max-width: 0.4rem;
+          max-height: 0.38rem; }
+      .jk-house .jk-share .jk-share-left .jk-shareleftitem .jk-shareleftitemTit {
+        height: 0.4rem;
+        line-height: 0.4rem;
+        font-size: 0.22rem;
+        color: #333333; }
+  .jk-house .jk-share .jk-share-right {
+    width: 60%;
+    padding-right: 0.36rem;
+    float: left;
+    display: flex;
+    flex-direction: row-reverse; }
+    .jk-house .jk-share .jk-share-right .jk-sharerightitem {
+      margin-top: 0.24rem;
+      margin-left: 0.18rem;
+      flex: 2.2rem;
+      max-width: 2.2rem;
+      height: 0.98rem;
+      line-height: 0.98rem; }
+    .jk-house .jk-share .jk-share-right button, .jk-house .jk-share .jk-share-right a {
+      display: inline-block;
+      text-align: center;
+      border-radius: 0.05rem;
+      width: 100%;
+      height: 100%;
+      color: white;
+      font-size: 0.26rem; }
+      .jk-house .jk-share .jk-share-right button.jk-call, .jk-house .jk-share .jk-share-right a.jk-call {
+        background: linear-gradient(to right, #5e90f3, #2c6adb); }
+      .jk-house .jk-share .jk-share-right button.jk-look, .jk-house .jk-share .jk-share-right a.jk-look {
+        background: linear-gradient(to right, #42c795, #30bb7f); }
+  .jk-house #callBottom, .jk-house #weCharBottom {
+    display: none; }
 
 /*房源信息  end*/
+/* 约看信息 start*/
+.jk-lookbox .jk-lookcon {
+  margin-top: 0.3rem;
+  padding: 0 0.3rem;
+  display: flex; }
+  .jk-lookbox .jk-lookcon .jk-lookconImg {
+    width: 3.24rem;
+    height: 2.44rem; }
+    .jk-lookbox .jk-lookcon .jk-lookconImg img {
+      max-width: 3.24rem; }
+  .jk-lookbox .jk-lookcon .jk-lookDesc {
+    flex: 1;
+    margin-left: 0.4rem; }
+    .jk-lookbox .jk-lookcon .jk-lookDesc .jkFlex {
+      height: 2.44rem;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: left; }
+      .jk-lookbox .jk-lookcon .jk-lookDesc .jkFlex p {
+        width: 100%; }
+    .jk-lookbox .jk-lookcon .jk-lookDesc .tit {
+      font-size: 0.4rem;
+      color: black; }
+    .jk-lookbox .jk-lookcon .jk-lookDesc .price {
+      font-size: 0.32rem;
+      color: #e45000;
+      padding: 0.3rem 0; }
+    .jk-lookbox .jk-lookcon .jk-lookDesc .info {
+      font-size: 0.28rem;
+      color: #b6b6b6; }
+      .jk-lookbox .jk-lookcon .jk-lookDesc .info span {
+        position: relative;
+        display: inline-block;
+        padding-right: 0.2rem;
+        padding-left: 0.05rem; }
+        .jk-lookbox .jk-lookcon .jk-lookDesc .info span:before {
+          content: '|';
+          position: absolute;
+          width: 0.2rem;
+          text-align: right;
+          right: 0;
+          font-size: 0.28rem;
+          color: #b6b6b6; }
+        .jk-lookbox .jk-lookcon .jk-lookDesc .info span:first-child {
+          padding-left: 0; }
+        .jk-lookbox .jk-lookcon .jk-lookDesc .info span:last-child {
+          padding-right: 0; }
+          .jk-lookbox .jk-lookcon .jk-lookDesc .info span:last-child:before {
+            display: none; }
+.jk-lookbox .jk-lookadd {
+  padding: 0 0.3rem; }
+  .jk-lookbox .jk-lookadd .jk-loonaddInfo {
+    font-size: 0.26rem;
+    color: #666666;
+    padding: 0.5rem 0 0.1rem 0; }
+  .jk-lookbox .jk-lookadd .jkFlex {
+    height: 0.96rem;
+    line-height: 0.96rem;
+    border-bottom: 1px solid #f2f2f2; }
+    .jk-lookbox .jk-lookadd .jkFlex .jklookaddlabel {
+      width: 30%;
+      font-size: 0.3rem;
+      color: black; }
+    .jk-lookbox .jk-lookadd .jkFlex input {
+      width: 100%;
+      height: 0.92rem;
+      text-align: right;
+      border: none;
+      margin-bottom: -1px;
+      font-size: 0.28rem;
+      color: #666666; }
+    .jk-lookbox .jk-lookadd .jkFlex select {
+      -webkit-appearance: none;
+      text-align: center;
+      border: none;
+      height: 0.92rem;
+      background: white; }
+
+/* 约看信息 end*/

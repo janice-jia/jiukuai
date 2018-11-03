@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>约看信息</title>
+    <link rel="stylesheet" href="./dist/index.css" />
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/flexible_css.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <div class="jk-lookbox">
+
+        <form action="./lookInfo.html">
+            <div class="jk-lookcon">
+                <div class="jk-lookconImg">
+                    <img src="./images/recommend.jpg" alt="" />
+                </div>
+                <div class="jk-lookDesc">
+                    <div class="jkFlex">
+                        <p class="tit">[订]新悦家园-3居</p>
+                        <p class="price">1830元/月</p>
+                        <p class="info">
+                            <span>14㎡</span>
+                            <span>2/6层</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="jk-lookadd">
+                <p class="jk-loonaddInfo">联系人信息</p>
+                <div class="jkFlex">
+                    <div class="tl jklookaddlabel">姓名</div>
+                    <div class="jkFlexItem">
+                        <input type="text" />
+                    </div>
+                </div>
+                <div class="jkFlex">
+                    <div class="tl jklookaddlabel">性别</div>
+                    <div class="jkFlexItem">
+                        <input type="text" name="sex"/>
+                    </div>
+                </div>
+                <div class="jkFlex">
+                    <div class="tl jklookaddlabel">手机</div>
+                    <div class="jkFlexItem">
+                        <input class="tr" name="tel" type="text" placeholder="请填写手机号码"/>
+                    </div>
+                </div>
+                <div class="jkFlex">
+                    <div class="tl jklookaddlabel">期望看房时间</div>
+                </div>
+                <div class="jkFlex">
+                    <div class="jkFlexItem">
+                        <select name="lookday" id="">
+                            <option value="0">随时看房</option>
+                            <option value="1">今天</option>
+                            <option value="2">明天</option>
+                            <option value="3">后天</option>
+                        </select>
+                    </div>
+                    <div class="jkFlexItem">
+                        <select name="looktime" id="">
+                            <option value="0">全天</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="jk-bottom">
+                <button class="jk-oneBtn-bottom" type="submit">提交约看</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

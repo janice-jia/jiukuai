@@ -87,7 +87,9 @@ a:focus{
 .tl{
     text-align: left;
 }
-
+.tr{
+    text-align: right;
+}
 .tag-parent{
     // display: grid;
     // grid-template-columns:repeat(4,1fr);
@@ -98,6 +100,11 @@ a:focus{
     width: 100%;
     flex-wrap: wrap;
     margin-left: -0.15rem !important;
+}
+.jk-tag-2{
+    flex: 50%;
+    max-width: 50%;
+    display: inline-block;
 }
 .jk-tag-4{
     flex: 25%;
@@ -134,6 +141,66 @@ a:focus{
 }
 .jkClear{
     clear: both;
+}
+.houseLink{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 22;
+}
+
+.jk-bottom{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 1.4rem;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    padding: 0 0.3rem;
+    z-index: 50;
+    box-shadow: 0px -0.5rem 0.5rem rgba(248,248,248,0.6);
+}
+.jk-oneBtn-bottom{
+    margin-top: 0.23rem;
+    width: 100%;
+    height: 0.96rem;
+    font-size: 0.28rem;
+    color: rgb(255, 255, 255);
+    border-radius: 0.15rem;
+    background:linear-gradient(to right, rgb(94,144,243),  rgb(44, 106, 219)); 
+}
+.jkBottomFlex2{
+    height: 100%;
+    background: rgb(255, 255, 255);
+    .jkFlexItem{
+        height: 100%;
+        &:first-child{
+            border-right: 1px solid rgb(215,213,213);
+        }
+    }
+    .jkBottomBtn2{
+        margin-top: 0.23rem;
+        width: 100%;
+        height: 0.96rem;
+        line-height: 0.96rem;
+        display: inline-block;
+        text-align: center;
+        font-size: 0.34rem;
+        color: rgb(85, 85, 85);
+        background: none;
+    }
+    .jkShareWechat{
+        img{
+            margin: 0.15rem 0 0.1rem 0;
+            max-height: 0.58rem;
+        }
+    }
+    .jkShareWechatTit{
+        font-size: 0.28rem;
+        color: rgb(51,51,51);
+    }
 }
 // 公用end
 
@@ -226,14 +293,6 @@ a:focus{
             padding: 0.3rem 0;
             border-bottom: 0.03rem solid rgb(229,229,229);
             position: relative;
-            .houseLink{
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                left: 0;
-                top: 0;
-                z-index: 22;
-            }
             .jk-cont-item-media{
                 img{
                     width: 2.4rem;
@@ -659,13 +718,34 @@ a:focus{
 /*房源信息  start*/
 .jk-house-banner{
     margin: 0 auto;
+    max-height: 5.62rem;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    .swiper-wrapper{
+        max-width: 100%;
+    }
     img{
         width: 100%;
         max-height: 5.62rem;
     }
+    .swiper-pagination-top{
+        padding: 0 0.3rem;
+        position: absolute;
+        bottom:0;
+        height: 0.4rem;
+        line-height: 0.4rem;
+        width: 100%;
+        left: 0;
+        background: rgba(0,0,0,0.3);
+        z-index: 20;
+        font-size: 0.24rem;
+        color: rgb(255, 255, 255);
+        text-align: right;
+    }
 }
 .jk-house{
-    padding: 0 0.36rem;
+    padding: 0 0.36rem 1.4rem 0.36rem;
     .jk-house-name{
         font-size: 0.46rem;
         color: rgb(51,51,51);
@@ -768,16 +848,17 @@ a:focus{
         }
     }
 
+    //地图
     .jk-house-map{
         height: 2.16rem;
         margin: 0.5rem 0 0.3rem 0;
         img{
             max-height: 2.16rem;
         }
-    }
-
+    }   
     .jk-house-mapgood{
         ul{
+            margin-bottom: 0.55rem;
             li{
                 font-size: 0.2rem;
                 color: rgb(51,51,51);
@@ -796,6 +877,241 @@ a:focus{
             }
         }
     }
+
+    //房源推荐
+    .jk-recommend{
+        margin: 0.5rem 0 0 0;
+        max-width: 100%;
+        .jk-recommend-item{
+            max-width: 3.24rem;
+            margin-right: 20px;
+            position: relative;
+            float: left;
+            .jk-recommend-img{
+                img{
+                    max-width: 3.24rem;
+                    max-height: 2,44rem;
+                }
+            }
+            .jk-recommend-con{
+                .jk-recommend-conTit{
+                    font-size: 0.3rem;
+                    color: rgb(110, 101, 101);
+                    margin-bottom: 0.15rem;
+                }
+                .jk-recommend-conDesc{
+                    font-size: 0.26rem;
+                    color: rgb(51,51,51);
+                    margin-bottom: 0.15rem;
+                }
+                .jk-recommend-conPrice{
+                    font-size: 0.26rem;
+                    color: rgb(228,80,0);
+                    margin-bottom: 0.15rem;
+                }
+                .jk-recommend-tag{
+                    .jk-ca-tag{
+                        height: 0.5rem;
+                        line-height: 0.5rem;
+                        font-size: 0.24rem;
+                        color: rgb(119, 119, 119);
+                    }
+                }
+            }
+        }
+    }
+
+    // 玖快租房
+    .jk-icon{
+        clear: both;
+        margin-bottom: 0.75rem;
+        .jk-icon-jk{
+            font-size: 0.3rem;
+            color: rgb(153, 153, 153);
+            text-align: center;
+            line-height: 0.3rem;
+            padding: 1rem 0 0.26rem 0;
+            img{
+                height: 0.3rem;
+                display: inline-block;
+            }
+        }
+        .jk-icon-desc{
+            font-size: 0.24rem;
+            color: rgb(153, 153, 153);
+            text-align: center;
+        }
+    }
+    //分享、预约、打电话
+    .jk-share{
+        .jk-share-left{
+            width: 40%;
+            float: left;
+            .jk-shareleftitem{
+                position: relative;
+                max-width: 0.9rem;
+                .jk-like{
+                    background: url(../images/icon-like.png) no-repeat center;
+                    background-size: 0.4rem 0.36rem;
+                }
+                .jklikehover{
+                    background: url(../images/icon-like-hover.png) no-repeat center;
+                    background-size: 0.4rem 0.36rem;
+                }
+                .jk-shareleftitemimg{
+                    height: 0.9rem;
+                    padding-top: 0.33rem;
+                    img{
+                        max-width: 0.4rem;
+                        max-height: 0.38rem;
+                    }
+                }
+                .jk-shareleftitemTit{
+                    height: 0.4rem;
+                    line-height: 0.4rem;
+                    font-size: 0.22rem;
+                    color: rgb(51,51,51);
+                }
+            }
+        }
+        .jk-share-right{
+            width: 60%;
+            padding-right: 0.36rem;
+            float: left;
+            display: flex;
+            flex-direction: row-reverse;
+            .jk-sharerightitem{
+                margin-top: 0.24rem;
+                margin-left: 0.18rem;
+                flex:2.2rem;
+                max-width: 2.2rem;
+                height: 0.98rem;
+                line-height: 0.98rem;
+            }
+            button,a{
+                display: inline-block;
+                text-align: center;
+                border-radius: 0.05rem;
+                width: 100%;
+                height: 100%;
+                color: rgb(255, 255, 255);
+                font-size: 0.26rem;
+                &.jk-call{
+                    background:linear-gradient(to right, rgb(94,144,243),  rgb(44, 106, 219)); 
+                }
+                &.jk-look{
+                    background:linear-gradient(to right, rgb(66, 199, 149), rgb(48, 187,127));
+                }
+            }
+        }
+    }
+    #callBottom,#weCharBottom{
+        display: none;
+    }
 }
 /*房源信息  end*/
+
+/* 约看信息 start*/
+.jk-lookbox{
+    .jk-lookcon{
+        margin-top: 0.3rem;
+        padding:0 0.3rem;
+        display: flex;
+        .jk-lookconImg{
+            width: 3.24rem;
+            height: 2.44rem;
+            img{
+                max-width: 3.24rem;
+            }
+        }
+        .jk-lookDesc{
+            flex: 1;
+            margin-left: 0.4rem;
+            .jkFlex{
+                height: 2.44rem;
+                align-items: center;
+                justify-content:center;
+                flex-direction: column;
+                text-align: left;
+                p{
+                    width: 100%;
+                }
+            }
+            .tit{
+                font-size: 0.4rem;
+                color: rgb(0,0,0);
+            }
+            .price{
+                font-size: 0.32rem;
+                color: rgb(228,80,0);
+                padding: 0.3rem 0;
+            }
+            .info{
+                font-size: 0.28rem;
+                color: rgb(182,182,182);
+                span{
+                    position: relative;
+                    display: inline-block;
+                    padding-right: 0.2rem;
+                    padding-left: 0.05rem;
+                    &:before{
+                        content: '|';
+                        position: absolute;
+                        width: 0.2rem;
+                        text-align: right;
+                        right: 0;
+                        font-size: 0.28rem;
+                        color: rgb(182,182,182);
+                    }
+                    &:first-child{
+                        padding-left: 0
+                    }
+                    &:last-child{
+                        padding-right: 0;
+                        &:before{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .jk-lookadd{
+        padding: 0 0.3rem;
+        .jk-loonaddInfo{
+            font-size: 0.26rem;
+            color: rgb(102,102,102);
+            padding: 0.5rem 0 0.1rem 0;
+        }
+        .jkFlex{
+            height: 0.96rem;
+            line-height: 0.96rem;
+            border-bottom: 1px solid rgb(242,242,242);
+            .jklookaddlabel{
+                width: 30%;
+                font-size: 0.3rem;
+                color: rgb(0,0,0);
+            }
+            input{
+                width: 100%;
+                height: 0.92rem;
+                text-align: right;
+                border: none;
+                margin-bottom: -1px;
+                font-size: 0.28rem;
+                color: rgb(102,102,102);
+            }
+            select{ 
+                -webkit-appearance: none; 
+                text-align: center;
+                border: none;
+                height: 0.92rem;
+                background: rgb(255, 255, 255);
+            }
+        }
+
+    }
+}
+/* 约看信息 end*/
 

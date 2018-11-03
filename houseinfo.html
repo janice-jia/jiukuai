@@ -9,10 +9,72 @@
     <script src="./js/zepto.min.js"></script>
     <script src="./js/flexible_css.js"></script>
     <script src="./js/index.js"></script>
+
+
+    <link rel="stylesheet" href="./dist/swiper.min.css">
+    <script src="./js/swiper.min.js"></script>
+    <script>
+        $(function(){
+            // 顶部轮播图
+            var swiper = new Swiper('#slideTop', {
+                pagination: '.swiper-pagination',
+                slidesPerView: 1,
+                autoplay:3000,
+                speed:500,
+                paginationClickable: true,
+                autoplayDisableOnInteraction: false,
+                pagination: '.swiper-pagination-top',
+                paginationType: 'custom',
+                initialSlide:0,
+                paginationCustomRender: function ( swiper, current, total ) {
+                    var _html = '';
+                    for ( var i = 1; i <= total; i++ ) {
+                        if ( current == i ) {
+                            _html += '<span class="swiper-pagination-customs swiper-pagination-customs-active">'+i+'</span>';
+                        }
+                    }
+                    _html += '<span class="swiper-pagination-customs">/'+total+'</span>';
+                        return _html; //返回所有的页码html
+                    },
+                    onReachEnd: function ( swiper ) {
+                        console.log( '到了最后一个slide' );
+                }
+            });
+
+            // 房源推荐滑块
+            var swiper = new Swiper('#slideCenter', {
+                pagination: '.swiper-pagination',
+                slidesPerView: 2,
+                paginationClickable: true,
+                spaceBetween: 20
+            });
+
+            // 拨打电话
+            $("#callBtn").click(function(){
+                $("#callBottom").show();
+                $("#callCancelBtn").click(function(){
+                    $("#callBottom").hide();
+                });
+            });
+
+            // 分享
+            $("#shareBtn").click(function(){
+                $("#weCharBottom").show();
+            })
+        })
+    		
+    </script>
 </head>
 <body>
-    <div class="jk-house-banner">
-        <img src="./images/house-banner.jpg" alt="">
+    <div class="jk-house-banner swiper-container" id="slideTop">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./images/house-banner.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./images/house-banner.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./images/house-banner.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./images/house-banner.jpg" alt=""></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination-top"></div>
     </div>
     <div class="jk-house">
         <div class="jk-house-name">
@@ -174,6 +236,211 @@
 
 
         <div class="jk-house-tit">房源推荐</div>
+        <div class="jk-recommend swiper-container" id="slideCenter">
+            <div class="swiper-wrapper">
+                <!-- 房源推荐 item start -->
+                <div class="jk-recommend-item swiper-slide">
+                    <a class="houseLink" href=""></a>
+                    <div class="jk-recommend-img"><img src="./images/recommend.jpg" alt="房源推荐" /></div>
+                    <div class="jk-recommend-con">
+                        <div class="jk-recommend-conTit">新悦家园4居室-北卧</div>
+                        <div class="jk-recommend-conDesc">
+                            <span>4室1厅</span>
+                            <span>14.9m³</span>
+                        </div>
+                        <div class="jk-recommend-conPrice">1860元/月</div>
+                        <div class="jk-recommend-tag tag-parent">
+                            <div class="jk-tag-2 ">
+                                <p class="jk-ca-tag">离地铁近</p>
+                            </div>
+                            <div class="jk-tag-2">
+                                <p class="jk-ca-tag">首次出租</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- 房源推荐 item end -->
+                <!-- 房源推荐 item start -->
+                <div class="jk-recommend-item swiper-slide">
+                    <a class="houseLink" href=""></a>
+                    <div class="jk-recommend-img"><img src="./images/recommend.jpg" alt="房源推荐" /></div>
+                    <div class="jk-recommend-con">
+                        <div class="jk-recommend-conTit">新悦家园4居室-北卧</div>
+                        <div class="jk-recommend-conDesc">
+                            <span>4室1厅</span>
+                            <span>14.9m³</span>
+                        </div>
+                        <div class="jk-recommend-conPrice">1860元/月</div>
+                        <div class="jk-recommend-tag tag-parent">
+                            <div class="jk-tag-2 ">
+                                <p class="jk-ca-tag">离地铁近</p>
+                            </div>
+                            <div class="jk-tag-2">
+                                <p class="jk-ca-tag">首次出租</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- 房源推荐 item start -->
+                <div class="jk-recommend-item swiper-slide">
+                    <a class="houseLink" href=""></a>
+                    <div class="jk-recommend-img"><img src="./images/recommend.jpg" alt="房源推荐" /></div>
+                    <div class="jk-recommend-con">
+                        <div class="jk-recommend-conTit">新悦家园4居室-北卧</div>
+                        <div class="jk-recommend-conDesc">
+                            <span>4室1厅</span>
+                            <span>14.9m³</span>
+                        </div>
+                        <div class="jk-recommend-conPrice">1860元/月</div>
+                        <div class="jk-recommend-tag tag-parent">
+                            <div class="jk-tag-2 ">
+                                <p class="jk-ca-tag">离地铁近</p>
+                            </div>
+                            <div class="jk-tag-2">
+                                <p class="jk-ca-tag">首次出租</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- 房源推荐 item end -->
+                <!-- 房源推荐 item start -->
+                <div class="jk-recommend-item swiper-slide">
+                    <a class="houseLink" href=""></a>
+                    <div class="jk-recommend-img"><img src="./images/recommend.jpg" alt="房源推荐" /></div>
+                    <div class="jk-recommend-con">
+                        <div class="jk-recommend-conTit">新悦家园4居室-北卧</div>
+                        <div class="jk-recommend-conDesc">
+                            <span>4室1厅</span>
+                            <span>14.9m³</span>
+                        </div>
+                        <div class="jk-recommend-conPrice">1860元/月</div>
+                        <div class="jk-recommend-tag tag-parent">
+                            <div class="jk-tag-2 ">
+                                <p class="jk-ca-tag">离地铁近</p>
+                            </div>
+                            <div class="jk-tag-2">
+                                <p class="jk-ca-tag">首次出租</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- 房源推荐 item end -->
+                <!-- 房源推荐 item start -->
+                <div class="jk-recommend-item swiper-slide">
+                    <a class="houseLink" href=""></a>
+                    <div class="jk-recommend-img"><img src="./images/recommend.jpg" alt="房源推荐" /></div>
+                    <div class="jk-recommend-con">
+                        <div class="jk-recommend-conTit">新悦家园4居室-北卧</div>
+                        <div class="jk-recommend-conDesc">
+                            <span>4室1厅</span>
+                            <span>14.9m³</span>
+                        </div>
+                        <div class="jk-recommend-conPrice">1860元/月</div>
+                        <div class="jk-recommend-tag tag-parent">
+                            <div class="jk-tag-2 ">
+                                <p class="jk-ca-tag">离地铁近</p>
+                            </div>
+                            <div class="jk-tag-2">
+                                <p class="jk-ca-tag">首次出租</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- 房源推荐 item end -->
+                <!-- 房源推荐 item start -->
+                <div class="jk-recommend-item swiper-slide">
+                    <a class="houseLink" href=""></a>
+                    <div class="jk-recommend-img"><img src="./images/recommend.jpg" alt="房源推荐" /></div>
+                    <div class="jk-recommend-con">
+                        <div class="jk-recommend-conTit">新悦家园4居室-北卧</div>
+                        <div class="jk-recommend-conDesc">
+                            <span>4室1厅</span>
+                            <span>14.9m³</span>
+                        </div>
+                        <div class="jk-recommend-conPrice">1860元/月</div>
+                        <div class="jk-recommend-tag tag-parent">
+                            <div class="jk-tag-2 ">
+                                <p class="jk-ca-tag">离地铁近</p>
+                            </div>
+                            <div class="jk-tag-2">
+                                <p class="jk-ca-tag">首次出租</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 玖快租房 start-->
+        <div class="jk-icon">
+            <div class="jk-icon-jk">
+                <img src="./images/icon-jk.png" alt="玖快租房" />
+                玖快租房
+            </div>
+            <div class="jk-icon-desc">为您精选最优质的房源</div>
+        </div>
+        <!-- 玖快租房 end-->
+
+        <!-- 分享、预约，打电话 -->
+        <div class="jk-share jk-bottom">
+            <div class="jk-share-left jkFlex">
+                <div class="jk-shareleftitem jkFlexItem" id="shareBtn">
+                    <p class="jk-shareleftitemimg"><img src="./images/icon-share.png" alt="分享" /></p>
+                    <p class="jk-shareleftitemTit">分享</p>
+                </div>
+                <div class="jk-shareleftitem jkFlexItem">
+                    <a href="" class="houseLink"></a>
+                    <p class="jk-shareleftitemimg jk-like jklikehover"></p>
+                    <p class="jk-shareleftitemTit">收藏</p>
+                </div>
+            </div>
+            <div class="jk-share-right">
+                <div class="jk-sharerightitem">
+                    <button class="jk-call" id="callBtn">拨打电话</button>
+                </div>
+                <div class="jk-sharerightitem">
+                    <a class="jk-look" href="lookInfo.html">预约看房</a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 拨打电话 -->
+        <div class="jk-bottom" id="callBottom">
+            <div class="jkFlex jkBottomFlex2">
+                <div class="jkFlexItem">
+                    <button class="jkBottomBtn2" id="callCancelBtn">取消</button>
+                </div>
+                <div class="jkFlexItem">
+                    <button class="jkBottomBtn2">立即拨打</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 分享 -->
+        <div class="jk-bottom" id="weCharBottom">
+            <div class="jkFlex jkBottomFlex2">
+                <div class="jkFlexItem">
+                    <p class="jkShareWechat">
+                        <img src="./images/icon-share1.png" alt="分享好友"/>
+                    </p>
+                    <p class="jkShareWechatTit">分享好友</p>
+                </div>
+                <div class="jkFlexItem">
+                    <p class="jkShareWechat">
+                        <img src="./images/icon-share2.png" alt="分享朋友圈"/>
+                    </p>
+                    <p class="jkShareWechatTit">分享朋友圈</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
