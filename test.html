@@ -1,77 +1,55 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-    <title>pc sticky</title>
-    <style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
- 
-    .banner {
-        height: 200px;
-    }
-    .nav {
-        height: 40px;
-        background-color: skyblue;
-        border: 1px solid silver;
-    }
-    .sticky {
-        /*滚过初始位置时自动吸顶*/
-        position: -webkit-sticky;
-        position: sticky;
-        /*吸顶时的定位*/
-        top: 0;
-        left: 0;
-        /*z比下方所有z高*/
-        z-index: 9999;
-    }
-    .content {
-        height: 1500px;
-    }
- 
-    .fixed-top {
-        position: fixed;
-        width: 100%;
-        left: 0;
-        top: 0;
-    }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/zepto.min.js"></script>
 </head>
 <body>
-    <div class="banner">Banner图</div>
-    <div class="nav">吸顶元素</div>
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <meta charset="UTF-8">
+        <title>html5类似开关的Checkbox / Radio</title>
+        <style>
 
-    <!-- 内容 -->
-    <div  style="height:1500px;">
-        
-        </div>
-<div>11111</div>
-
-    <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
-<script>
-	var stickyEl = document.querySelector('.nav');
-	function fixed(num) {
-        var u = navigator.userAgent;
-        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; 
-        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); 
-        if(isAndroid) {
-            document.body.onscroll = function(e) {
-                var scrollT = document.documentElement.scrollTop;
-                console.info('scrollT', scrollT)
-                if (scrollT > num) {
-                    $(stickyEl).addClass('fixed-top');
-                }else {
-                    $(stickyEl).removeClass('fixed-top');
-                }
-            };
-        }else if(isiOS) {
-            $(stickyEl).addClass('sticky');
-            console.log(11);
+        /* CHECKBOXES */
+        .jk-checkbox { display: none; }
+        .trigger {
+          cursor: pointer;
+          position: relative;
+          float: left;
+          width: 30px; height: 20px;
+          margin: 10px;
+          background: #666;
+          overflow: hidden;
+          -webkit-transition: background .15s linear;
         }
-    }
-    fixed(200);
-</script>
+        .jk-checkbox:checked + .trigger { background: #00C5FF; }
+        .trigger:before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; bottom: 0;
+          width: 10px; height: 10px;
+          margin: auto 5px;
+          box-shadow: 0 0 0 100px hsla(0, 0%, 0%, .3);
+          -webkit-transition: left .15s linear;
+          border-radius: 13px;
+        }
+        .jk-checkbox:checked + .trigger:before { left: 10px; }
+       
+       </style>
+        </head>
+        <body>
+        <form action="./test.html">
+            <input id="check_1" class="jk-checkbox" name="check" type="checkbox" checked>
+            <label for="check_1" class="trigger"></label>
+            <button type="submit">111111</button>
+        </form>
+        </body>
+        </html>
 </body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>发布--整租</title>
+    <link rel="stylesheet" href="./dist/index.css" />
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/flexible_css.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <div class="jk-rent">
+        <form action="">
+            <!-- 上传 -->
+            <div class="jk-rent-bannerDefault">
+                <!-- 上传按钮 -->
+                <div class="jk-rent-photo">
+                    <div class="jk-rent-photoBtn">
+                        <input type="file"/>
+                    </div>
+                </div>
+                <img src="./images/rent-banner.jpg" alt="" />
+            </div>
+
+
+            <!-- 基本信息 -->
+            <div class="jk-groupTit">基本信息<span>（门牌号不会公开）</span></div>
+            <div class="jk-group">
+                <div class="jk-group-tit">小区：</div>
+                <div class="jk-group-inputInfo">
+                    <input class="jk-group-input" type="text" placeholder="请填写信息"/>
+                </div>
+            </div>
+            <div class="jk-group">
+                <div class="jk-group-tit">门牌号：</div>
+                <div class="jk-group-inputInfo">
+                    <select class="jk-group-select" name="" id="">
+                        <option value="0">请选择内容</option>
+                        <option value="1">测试</option>
+                        <option value="2">测试2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="jk-group">
+                <div class="jk-group-tit">面积：</div>
+                <div class="jk-group-inputInfo">
+                    <input class="jk-group-input" type="text" placeholder="请填写信息"/>
+                </div>
+            </div>
+            <div class="jk-group">
+                <div class="jk-group-tit">装修：</div>
+                <div class="jk-group-inputInfo">
+                    <select class="jk-group-select" name="" id="">
+                        <option value="0">请选择内容</option>
+                        <option value="1">测试</option>
+                        <option value="2">测试2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="jk-group">
+                <div class="jk-group-tit">厅室：</div>
+                <div class="jk-group-inputInfo">
+                    <select class="jk-group-select" name="" id="">
+                        <option value="0">请选择内容</option>
+                        <option value="1">测试</option>
+                        <option value="2">测试2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="jk-group">
+                <div class="jk-group-tit">朝向：</div>
+                <div class="jk-group-inputInfo">
+                    <select class="jk-group-select" name="" id="">
+                        <option value="0">请选择内容</option>
+                        <option value="1">测试</option>
+                        <option value="2">测试2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="jk-group">
+                <div class="jk-group-tit">楼层：</div>
+                <div class="jk-group-inputInfo">
+                    <select class="jk-group-select" name="" id="">
+                        <option value="0">请选择内容</option>
+                        <option value="1">测试</option>
+                        <option value="2">测试2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="jk-group">
+                <div class="jk-group-tit">电梯：</div>
+                <div class="jk-group-inputInfo">
+                    <div class="jk-checkBoxSkin">
+                        <input id="lift" class="jk-checkbox" name="check" checked type="checkbox" />
+                        <label for="lift" class="trigger"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="jk-group">
+                <div class="jk-group-tit">车位：</div>
+                <div class="jk-group-inputInfo">
+                    <div class="jk-checkBoxSkin">
+                        <input id="park" class="jk-checkbox" name="check" type="checkbox" />
+                        <label for="park" class="trigger"></label>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- 入住信息 -->
+            <div class="jk-groupTit">入住信息</div>
+            <div class="jk-group">
+                <div class="jk-group-tit">入住时间：</div>
+                <div class="jk-group-inputInfo">
+                    <select class="jk-group-select" name="" id="">
+                        <option value="0">请选择时间</option>
+                        <option value="1">测试</option>
+                        <option value="2">测试2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="jk-group">
+                <div class="jk-group-tit">易住人数：</div>
+                <div class="jk-group-inputInfo">
+                    <select class="jk-group-select" name="" id="">
+                        <option value="0">请选择内容</option>
+                        <option value="1">测试</option>
+                        <option value="2">测试2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="jk-group">
+                <div class="jk-group-tit">看房时间：</div>
+                <div class="jk-group-inputInfo">
+                    <select class="jk-group-select" name="" id="">
+                        <option value="0">请选择时间</option>
+                        <option value="1">测试</option>
+                        <option value="2">测试2</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 租金详情 -->
+            <div class="jk-groupTit">租金详情</div>
+            <div class="jk-group">
+                <div class="jk-group-tit">月租金：</div>
+                <div class="jk-group-inputInfo">
+                    <input class="jk-group-input" type="text" placeholder="请填写信息"/>
+                </div>
+            </div>
+            <div class="jk-group">
+                <div class="jk-group-tit">付款方式：</div>
+                <div class="jk-group-inputInfo">
+                    <select class="jk-group-select" name="" id="">
+                        <option value="0">请选择内容</option>
+                        <option value="1">测试</option>
+                        <option value="2">测试2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="jk-group">
+                <div class="jk-group-tit">租金包含费用<span>（物业费等）</span>:</div>
+                <div class="jk-group-inputInfo">
+                    <select class="jk-group-select" name="" id="">
+                        <option value="0">请选择内容</option>
+                        <option value="1">测试</option>
+                        <option value="2">测试2</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 联系人 -->
+            <div class="jk-groupTit">联系人</div>
+            <div class="jk-group">
+                <div class="jk-group-tit">房东：</div>
+                <div class="jk-group-inputInfo">
+                    <input class="jk-group-input" type="text" placeholder="请填写姓名"/>
+                </div>
+                <div class="jk-checkBoxSkin jk-checkBoxVal">
+                    <input id="sex" class="jk-checkbox" name="check" type="checkbox" checked/>
+                    <label for="sex" class="trigger"></label>
+                    <span class="jk-checkbox-checkVal1">男士</span>
+                    <span class="jk-checkbox-checkVal2">女士</span>
+                </div>
+            </div>
+
+            <div class="jk-bottom">
+                <button class="jk-oneBtn-bottom" type="submit">下一步</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

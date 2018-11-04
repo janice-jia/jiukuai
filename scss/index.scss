@@ -329,59 +329,60 @@ a:focus{
         }
     }
 
-    // 底部导航
-    .jk-nav{
-        width: 100%;
-        position: fixed;
-        bottom: 0;
-        height: 1.15rem;
-        background: rgb(255, 255, 255);
-        z-index: 101;
-        .jk-nav-item{
-            position: relative;
-            .nav-link{
-                position: absolute;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 10;
-            }
-            .jk-nav-item-icon{
-                height: 0.75rem;
-            }
-            p{
-                font-size: 0.24rem;
-                color: rgb(153, 153, 153);
-            }
-            .nav-icon01{
-                background: url(../images/icon-index.png) no-repeat center;
-                background-size: 0.48rem 0.42rem;
-            }
-            .nav-icon02{
-                background: url(../images/icon-publish.png) no-repeat center;
-                background-size: 0.49rem 0.37rem;
-            }
-            .nav-icon03{
-                background: url(../images/icon-mine.png) no-repeat center;
-                background-size: 0.36rem 0.43rem;
-            }
+   
+}
+ // 底部导航
+.jk-nav{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 1.15rem;
+    background: rgb(255, 255, 255);
+    z-index: 101;
+    .jk-nav-item{
+        position: relative;
+        .nav-link{
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
         }
-        .nav-hover{
-            .nav-icon01{
-                background: url(../images/icon-index-hover.png) no-repeat center;
-                background-size: 0.48rem 0.42rem;
-            }
-            .nav-icon02{
-                background: url(../images/icon-publish-hover.png) no-repeat center;
-                background-size: 0.49rem 0.37rem;
-            }
-            .nav-icon03{
-                background: url(../images/icon-mine-hover.png) no-repeat center;
-                background-size: 0.36rem 0.43rem;
-            }
-            p{
-                color: rgb(44,106,220);
-            }
+        .jk-nav-item-icon{
+            height: 0.75rem;
+        }
+        p{
+            font-size: 0.24rem;
+            color: rgb(153, 153, 153);
+        }
+        .nav-icon01{
+            background: url(../images/icon-index.png) no-repeat center;
+            background-size: 0.48rem 0.42rem;
+        }
+        .nav-icon02{
+            background: url(../images/icon-publish.png) no-repeat center;
+            background-size: 0.49rem 0.37rem;
+        }
+        .nav-icon03{
+            background: url(../images/icon-mine.png) no-repeat center;
+            background-size: 0.36rem 0.43rem;
+        }
+    }
+    .nav-hover{
+        .nav-icon01{
+            background: url(../images/icon-index-hover.png) no-repeat center;
+            background-size: 0.48rem 0.42rem;
+        }
+        .nav-icon02{
+            background: url(../images/icon-publish-hover.png) no-repeat center;
+            background-size: 0.49rem 0.37rem;
+        }
+        .nav-icon03{
+            background: url(../images/icon-mine-hover.png) no-repeat center;
+            background-size: 0.36rem 0.43rem;
+        }
+        p{
+            color: rgb(44,106,220);
         }
     }
 }
@@ -1095,10 +1096,9 @@ a:focus{
             }
             input{
                 width: 100%;
-                height: 0.92rem;
+                height: 0.86rem;
                 text-align: right;
                 border: none;
-                margin-bottom: -1px;
                 font-size: 0.28rem;
                 color: rgb(102,102,102);
             }
@@ -1115,3 +1115,214 @@ a:focus{
 }
 /* 约看信息 end*/
 
+
+
+/* 发布 start*/
+.jk-publish{
+    .jk-publish-item{
+        display: flex;
+        padding: 0 0.4rem;
+        align-items: center;
+        height: 1.38rem;
+        border-bottom:1px solid rgb(247,247,247);
+        position: relative;
+        .jk-publish-itemImg{
+            img{
+                width: 0.79rem;
+            }
+        }
+        .jk-publish-itemType{
+            width: 100%;
+            padding: 0 0.2rem;
+            flex: 1;
+            .publishtit{
+                font-size: 0.28rem;
+                color: rgb(30, 30, 30);
+                padding-bottom: 0.1rem;
+            }
+            .publishcon{
+                font-size: 0.24rem;
+                color: rgb(153, 153, 153);
+            }
+        }
+        .jk-publish-itemRight{
+            img{
+                width: 0.19rem;
+                height: 0.32rem;
+            }
+        }
+    }
+}
+/* 发布 start*/
+
+
+/* CHECKBOXES start*/
+.jk-checkBoxSkin{
+    height: 0.76rem;
+    float: right;
+    flex: 1rem;
+    max-width: 1rem;
+    position: relative;
+   .jk-checkbox { 
+       display: none; 
+   }
+   .trigger{
+       cursor: pointer;
+       position: relative;
+       left: 0;
+       top: 50%;
+       float: left;
+       width: 0.5rem;
+       height: 0.26rem;
+       margin-top: -0.13rem;
+       background:rgb(153, 153, 153);
+       border-radius: 0.13rem;
+       overflow: hidden;
+       transform: background .15s linear;
+   }
+   .jk-checkbox:checked + .trigger { 
+       background: rgb(228,80, 0); 
+   }
+   .trigger:before {
+       content: '';
+       position: absolute;
+       top: 0; 
+       left: 0; 
+       bottom: 0;
+       width: 0.24rem; 
+       height: 0.22rem;
+       margin: auto 2px;
+       background: rgb(255, 255, 255);
+       transition: left .15s linear;
+       border-radius: 0.13rem;
+   }
+   .jk-checkbox:checked + .trigger:before { 
+       left: 0.22rem; 
+   }
+
+   .jk-checkbox-checkVal1,.jk-checkbox-checkVal2{
+        // display: none;
+        font-size: 0.18rem;
+        position: absolute;
+        height: 0.76rem;
+        line-height: 0.76rem;
+        top: 0;
+        width: 0.5rem;
+        text-align: center;
+        color: rgb(255, 255, 255);
+    }
+    .jk-checkbox-checkVal1{
+        left: 0;
+        display: none;
+    }
+    .jk-checkbox-checkVal2{
+        right: 0;
+    }
+    
+    
+}
+.jk-checkBoxVal{
+    margin-left: 0.2rem;
+    max-width: 0.77rem;
+    .trigger{
+        width: 0.77rem;
+        background: rgb(228,80, 0); 
+    }
+    .jk-checkbox:checked + .trigger:before { 
+        left: 0.46rem; 
+    }
+    .jk-checkbox:checked ~.jk-checkbox-checkVal1{ 
+        display: block;
+    }
+    .jk-checkbox:checked ~.jk-checkbox-checkVal2{ 
+        display: none;
+    }
+}
+/* CHECKBOXES  end*/
+
+
+/* 发布--整租  start*/
+.jk-rent{
+    padding-bottom: 2rem;
+    // 上传
+    .jk-rent-bannerDefault{
+        height: 5.62rem;
+        position: relative;
+        img{
+            max-width: 100%;
+            max-height: 5.62rem;
+        }
+        .jk-rent-photo{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background:rgba(0,0,0,0.6);
+            .jk-rent-photoBtn{
+                background: url(../images/icon-photo.png) center no-repeat;
+                background-size: 2.06rem 2.06rem;
+                height: 2.06rem;
+                width: 2.06rem;
+                position: absolute;
+                left: 50%;
+                top:50%;
+                margin: -1.03rem 0 0 -1.03rem;
+                input{
+                    height: 2.06rem;
+                    width: 2.06rem;
+                    position: absolute;
+                    z-index: 100;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+
+    // group info
+    .jk-groupTit{
+        font-size: 0.36rem;
+        color: rgb(0,0,0);
+        padding: 0.4rem 0.3rem 0.3rem 0.3rem;
+        span{
+            font-size: 0.24rem;
+        }
+    }
+    .jk-group{
+        display: flex;
+        align-items: center;
+        height: 0.76rem;
+        margin: 0 0.3rem;
+        border-bottom: 1px solid rgb(242,242,242);
+        .jk-group-tit{
+            height: 100%;
+            font-size: 0.28rem;
+            color: rgb(0,0,0);
+            text-align: left;
+            line-height: 0.76rem;
+        }
+        .jk-group-inputInfo{
+            flex: 1;
+            height: 100%;
+            font-size: 0.28rem;
+            color: rgb(153, 153, 153);
+            .jk-group-input,.jk-group-select{
+                width: 100%;
+                height: 100%;
+                font-size: 0.28rem;
+                border: none;
+                color: rgb(153, 153, 153);
+                text-align: right;
+            }
+            .jk-group-select{
+                float: right;
+                direction: rtl;
+                background: none;
+                color: rgb(153, 153, 153);
+            }
+        }
+        
+    }
+}
+/* 发布--整租  end*/
