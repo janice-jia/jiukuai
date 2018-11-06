@@ -11,63 +11,80 @@
     <script src="./js/index.js"></script>
 </head>
 <body>
-    <form action="./发布-未认证.html">
-        <div class="jk-rent2">
-            <!-- 房屋配置 -->
-            <div class="jk-rent2Tit">房屋配置</div>
-            <div class="jkFlex tag-parent">
-                <p class="jk-ca-tag tag-hover">热水器</p>
-                <p class="jk-ca-tag">燃气灶</p>
-                <p class="jk-ca-tag">衣柜</p>
-                <p class="jk-ca-tag">电视</p>
-                <p class="jk-ca-tag">暖气</p>
-                <p class="jk-ca-tag">抽烟机</p>
-                <p class="jk-ca-tag">电磁炉</p>
-                <p class="jk-ca-tag">宽带</p>
-                <p class="jk-ca-tag">洗衣机</p>
-                <p class="jk-ca-tag">微波炉</p>
-                <p class="jk-ca-tag">床</p>
-                <p class="jk-ca-tag">空调</p>
-                <p class="jk-ca-tag">沙发</p>
-                <p class="jk-ca-tag">桌椅</p>
-                <p class="jk-ca-tag">阳台</p>
-                <p class="jk-ca-tag">冰箱</p>
-                <p class="jk-ca-tag">独立卫生间</p>
-            </div>
-
-            <!-- 房屋亮点 -->
-            <div class="jk-rent2Tit">房屋亮点</div>
-            <div class="jkFlex tag-parent">
-                <p class="jk-ca-tag tag-hover">南北通透</p>
-                <p class="jk-ca-tag">首次出租</p>
-                <p class="jk-ca-tag">有阳台</p>
-            </div>
-
-            <!-- 出租要求 -->
-            <div class="jk-rent2Tit">出租要求</div>
-            <div class="jkFlex tag-parent">
-                <p class="jk-ca-tag">一家人</p>
-                <p class="jk-ca-tag">只限女性</p>
-                <p class="jk-ca-tag">半年起租</p>
-                <p class="jk-ca-tag">租户稳定</p>
-                <p class="jk-ca-tag">禁烟</p>
-                <p class="jk-ca-tag">一年起租</p>
-                <p class="jk-ca-tag">作息正常</p>
-                <p class="jk-ca-tag">禁止养动物</p>
-            </div>
-
-            <!-- 补充两句 -->
-            <div class="jk-rent2Tit">补充两句</div>
-            <div class="jk-supplement">
-                <textarea name="" id="" cols="30" rows="10" placeholder="选填（详细的描述会大大增加快速出租的机会！可以介绍房子吸引人的地方，交通和周边环境，可以入住的时间，对租客的要求等）"></textarea>
-                <!-- <textarea name="" id="" cols="30" rows="10" placeholder="房子离地铁很近，周围有大型超市，购物很方便。"></textarea> -->
-                <p class="jk-swordNum"><span class="origin">22</span> / 300字以内</span>
-            </div>
-
-            <div class="jk-bottom">
-                <button class="jk-oneBtn-bottom" type="submit">确定</button>
-            </div>
+<form action="./发布-未认证.html">
+    <div class="jk-rent2">
+        <!-- 房屋配置 -->
+        <div class="jk-rent2Tit">房屋配置</div>
+        <div class="jkFlex tag-parent" id="houseConfig">
+            <p class="jk-ca-tag" data-id="0">热水器</p>
+            <p class="jk-ca-tag" data-id="1">燃气灶</p>
+            <p class="jk-ca-tag" data-id="2">衣柜</p>
+            <p class="jk-ca-tag" data-id="3">电视</p>
+            <p class="jk-ca-tag" data-id="4">暖气</p>
+            <p class="jk-ca-tag" data-id="5">抽烟机</p>
+            <p class="jk-ca-tag" data-id="6">电磁炉</p>
+            <p class="jk-ca-tag" data-id="7">宽带</p>
+            <p class="jk-ca-tag" data-id="8">洗衣机</p>
+            <p class="jk-ca-tag" data-id="9">微波炉</p>
+            <p class="jk-ca-tag" data-id="10">床</p>
+            <p class="jk-ca-tag" data-id="11">空调</p>
+            <p class="jk-ca-tag" data-id="12">沙发</p>
+            <p class="jk-ca-tag" data-id="13">桌椅</p>
+            <p class="jk-ca-tag" data-id="14">阳台</p>
+            <p class="jk-ca-tag" data-id="15">冰箱</p>
+            <p class="jk-ca-tag" data-id="16">独立卫生间</p>
         </div>
-    </form>
+        <input type="hidden" name="houseConfigVal" id="houseConfigVal" />
+
+        <!-- 房屋亮点 -->
+        <div class="jk-rent2Tit">房屋亮点</div>
+        <div class="jkFlex tag-parent" id="houseGood">
+            <p class="jk-ca-tag" data-id="0">南北通透</p>
+            <p class="jk-ca-tag" data-id="1">首次出租</p>
+            <p class="jk-ca-tag" data-id="2">有阳台</p>
+        </div>
+        <input type="hidden" name="houseGoodVal" id="houseGoodVal" />
+
+        <!-- 出租要求 -->
+        <div class="jk-rent2Tit">出租要求</div>
+        <div class="jkFlex tag-parent" id="houseRequire">
+            <p class="jk-ca-tag" data-id="0">一家人</p>
+            <p class="jk-ca-tag" data-id="1">只限女性</p>
+            <p class="jk-ca-tag" data-id="2">半年起租</p>
+            <p class="jk-ca-tag" data-id="3">租户稳定</p>
+            <p class="jk-ca-tag" data-id="4">禁烟</p>
+            <p class="jk-ca-tag" data-id="5">一年起租</p>
+            <p class="jk-ca-tag" data-id="6">作息正常</p>
+            <p class="jk-ca-tag" data-id="7">禁止养动物</p>
+        </div>
+        <input type="hidden" name="houseRequireVal" id="houseRequireVal" />
+
+        <!-- 补充两句 -->
+        <div class="jk-rent2Tit">补充两句</div>
+        <div class="jk-supplement">
+            <textarea name="" id="" cols="30" rows="10" placeholder="选填（详细的描述会大大增加快速出租的机会！可以介绍房子吸引人的地方，交通和周边环境，可以入住的时间，对租客的要求等）"></textarea>
+            <!-- <textarea name="" id="" cols="30" rows="10" placeholder="房子离地铁很近，周围有大型超市，购物很方便。"></textarea> -->
+            <p class="jk-swordNum"><span class="origin">22</span> / 300字以内</span>
+        </div>
+
+        <div class="jk-bottom">
+            <button class="jk-oneBtn-bottom" type="submit">确定</button>
+        </div>
+    </div>
+</form>
+
+<script>
+    // 房屋配置
+    var houseConfig=["热水器","燃气灶","衣柜","电视","暖气","抽烟机","电磁炉", "宽带","洗衣机","微波炉","床","空调","沙发","桌椅","阳台","冰箱","独立卫生间"];
+    getSelectData(houseConfig, 'houseConfig','jk-ca-tag', 'houseConfigVal','tag-hover');
+
+    // 房屋亮点
+    var houseGood = ["南北通透", "首次出租", "有阳台"];
+    getSelectData(houseGood, 'houseGood','jk-ca-tag', 'houseGoodVal','tag-hover');
+
+    //房屋要求
+    var houseRequire = ["一家人","只限女性","半年起租","租户稳定","禁烟","一年起租","作息正常","禁止养动物"];
+    getSelectData(houseRequire, 'houseRequire','jk-ca-tag', 'houseRequireVal','tag-hover');
+</script>
 </body>
 </html>

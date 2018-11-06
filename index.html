@@ -96,7 +96,7 @@
         <!-- 筛选 nav start-->
         <div class="jk-screen" id="screenMenu">
             <div class="jk-screen-menu jkFlex">
-                <div class="jk-screen-menu-item">
+                <div class="jk-screen-menu-item screen-menu-hover">
                     <p class="jkScreenNav menuArea" data-show-screen="Area">
                         <span class="overEllipsis screen-menu-width">区域</span>
                     </p>
@@ -302,213 +302,225 @@
 
     <!-- 筛选 弹层 start-->
     <div class="jkScreen" id="jkScreen">
-        <!-- 筛选 nav start-->
-        <div class="jk-screen">
-            <div class="jk-screen-menu jkFlex">
-                <div class="jk-screen-menu-item">
-                    <p class="jkScreenNav menuArea" data-show-screen="Area">
-                        <span class="overEllipsis screen-menu-width">区域</span>
-                    </p>
-                </div>
-                <div class="jk-screen-menu-item">
-                    <p class="jkScreenNav menuPrice" data-show-screen="Price">
-                        <span class="overEllipsis screen-menu-width">租金</span>
-                    </p>
-                </div>
-                <div class="jk-screen-menu-item">
-                    <p class="jkScreenNav menuHouseType"  data-show-screen="HouseType">
-                        <span class="overEllipsis screen-menu-width">户型</span>
-                    </p>
-                </div>
-                <div class="jk-screen-menu-item">
-                    <p class="jkScreenNav menuScreen" data-show-screen="Screen">
-                        <span class="overEllipsis screen-menu-width">筛选</span>
-                    </p>
-                </div>
-                <div class="jk-screen-menu-item">
-                    <p class="jkScreenNav menuSort" data-show-screen="Sort">
-                        <span class="sort-icon">&nbsp;</span>
-                    </p>
+        <form action="./index.html">
+            <!-- 筛选 nav start-->
+            <div class="jk-screen">
+                <div class="jk-screen-menu jkFlex">
+                    <div class="jk-screen-menu-item">
+                        <p class="jkScreenNav menuArea" data-show-screen="Area">
+                            <span class="overEllipsis screen-menu-width">区域</span>
+                        </p>
+                    </div>
+                    <div class="jk-screen-menu-item">
+                        <p class="jkScreenNav menuPrice" data-show-screen="Price">
+                            <span class="overEllipsis screen-menu-width">租金</span>
+                        </p>
+                    </div>
+                    <div class="jk-screen-menu-item">
+                        <p class="jkScreenNav menuHouseType"  data-show-screen="HouseType">
+                            <span class="overEllipsis screen-menu-width">户型</span>
+                        </p>
+                    </div>
+                    <div class="jk-screen-menu-item">
+                        <p class="jkScreenNav menuScreen" data-show-screen="Screen">
+                            <span class="overEllipsis screen-menu-width">筛选</span>
+                        </p>
+                    </div>
+                    <div class="jk-screen-menu-item">
+                        <p class="jkScreenNav menuSort" data-show-screen="Sort">
+                            <span class="sort-icon">&nbsp;</span>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- 筛选 nav end-->
+            <!-- 筛选 nav end-->
 
-        <!-- 区域筛选  start-->
-        <div class="jkScreenItem" id="screenArea">
-            <form action="./index.html">
-                <div class="jk-screen-box jkFlex">
+            <!-- 区域筛选  start-->
+            <div class="jkScreenItem" id="screenArea">
+                <div class="jk-screen-box jkFlex" id="jkScreenArea">
 
                     <!-- 附近 start-->
-                    <!-- <div class="jk-screen-cont jkFlexItem tl">
-                        <ul class="jk-screen-ui">
-                            <li class="shover">附近</li>
-                            <li>区域</li>
-                            <li>地铁</li>
-                        </ul>
-                    </div>
-                    <div class="jk-screen-cont jkFlexItem screenBg">
-                        <ul class="jk-screen-ui">
-                            <li>不限</li>
-                            <li>1000m内</li>
-                            <li class="shover">3000m内</li>
-                            <li>5000m内</li>
-                        </ul>
-                    </div> -->
-                    <!-- 附近 end-->
-        
-                    <!-- 区域 start-->
                     <div class="jk-screen-cont jkFlexItem tl">
                         <ul class="jk-screen-ui">
-                            <li>附近</li>
-                            <li class="shover">区域</li>
-                            <li>地铁</li>
+                            <li class="showTabItem shover" id="near" onclick="showTab('near')">附近</li>
+                            <li class="showTabItem" id="area" onclick="showTab('area')">区域</li>
+                            <li class="showTabItem" id="subWay" onclick="showTab('subWay')">地铁</li>
+                            <input type="hidden" name="screenType" id="screenType">
                         </ul>
                     </div>
-                    <div class="jk-screen-cont jkFlexItem screenBg">
-                        <ul class="jk-screen-ui">
-                            <li>不限</li>
-                            <li>1000m内</li>
-                            <li class="shover">3000m内</li>
-                            <li>5000m内</li>
-                        </ul>
-                    </div>
-                    <div class="jk-screen-cont jkFlexItem screenBg1">
-                            <ul class="jk-screen-ui">
-                                <li>不限</li>
-                                <li>1000m内</li>
-                                <li class="shover">3000m内</li>
-                                <li>5000m内</li>
-                            </ul>
-                        </div>
-                    <!-- 区域 end-->
+                    
+                    <script>
+                        // 默认附近
+                        var rentNear = ["不限","1000m内","2000m内","3000m内"];
+                        // 区域
+                        var areaData = [
+                            {name:"test1",child:['test1-1','test1-2','test1-3']},
+                            {name:"test2",child:['test2-1','test2-2','test2-3']},
+                            {name:"test3",child:['test3-1','test3-2','test3-3']}
+                        ]
+                        // 地铁
+                        var subWayData = [
+                            {name:"全北京",child:['test1-1','test1-2','test1-4']},
+                            {name:"朝阳",child:['test2-1','test2-2','test2-5']},
+                            {name:"昌平",child:['test3-1','test3-2','test3-3']}
+                        ]
+                        showTab('near');
+                    </script>
+                    <!-- 附近 end-->
+        
                 </div>
                 <div class="jk-screen-btn">
                     <button class="blue-btn" type="submit">确定</button>
                 </div>
-            </form>
-            
-        </div>
-        <!-- 区域筛选  end-->
+                
+            </div>
+            <!-- 区域筛选  end-->
 
-        <!-- 租金筛选  start-->
-        <div class="jkScreenItem" id="screenPrice">
-            <form action="./index.html">
+            <!-- 租金筛选  start-->
+            <div class="jkScreenItem" id="screenPrice">
                 <div class="jk-screen-box jkFlex">
                     <div class="jk-screen-cont jkFlexItem">
-                        <ul class="jk-screen-ui">
-                            <li class="shover">不限</li>
-                            <li><a href="">≤500元</a></li>
-                            <li>500-1000</li>
-                            <li>1000-1500</li>
-                            <li>1500-2000</li>
-                            <li>2000-3000</li>
-                            <li>3000-4000</li>
-                            <li>4000-5000</li>
-                            <li>≥5000</li>
+                        
+                        <ul class="jk-screen-ui" id="priceType">
+                            <li class="tagItem" data-id="0">不限</li>
+                            <li class="tagItem" data-id="1">≤500元</li>
+                            <li class="tagItem" data-id="2">500-1000</li>
+                            <li class="tagItem" data-id="3">1000-1500</li>
+                            <li class="tagItem" data-id="4">1500-2000</li>
+                            <li class="tagItem" data-id="5">2000-3000</li>
+                            <li class="tagItem" data-id="6">3000-4000</li>
+                            <li class="tagItem" data-id="7">4000-5000</li>
+                            <li class="tagItem" data-id="8">≥5000</li>
                         </ul>
+                        <input type="hidden" name="priceTypeVal" id="priceTypeVal" />
+                        <script>
+                            var priceType = ["不限","≤500元","500-1000","1000-1500","2000-3000","3000-4000","合4000-5000租","≥5000"];
+                            getSelectData(priceType, 'priceType','tagItem', 'priceTypeVal','shover', true, '不限');
+                        </script>
+
                     </div>
                 </div>
                 <div class="jk-screen-btn">
                     <button class="blue-btn" type="submit">确定</button>
                 </div>
-            </form>
-        </div>
-        <!-- 租金筛选  end-->
+            </div>
+            <!-- 租金筛选  end-->
 
-        <!-- 户型筛选  start-->
-        <div class="jkScreenItem" id="screenHouseType">
-            <form action="./index.html">
+            <!-- 户型筛选  start-->
+            <div class="jkScreenItem" id="screenHouseType">
                 <div class="jkscreenHouseType">
+                    <!-- 租房类型 -->
                     <div class="jk-houseType-tit">租房类型</div>
-                    <div class="jk-houseType-con tag-parent">
-                        <div class="jk-tag-4"><p class="jk-ca-tag tag-hover">不限</p></div>
-                        <div class="jk-tag-4"><p class="jk-ca-tag">整租</p></div>
-                        <div class="jk-tag-4"><p class="jk-ca-tag">合租</p></div>
-                        <div class="jk-tag-4"><p class="jk-ca-tag">短租</p></div>
+                    <div class="jk-houseType-con tag-parent" id="rentType"> 
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="0">不限</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="1">整租</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="2">合租</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="3">短租</p></div>
                     </div>
+                    <input type="hidden" name="rentTypeVal" id="rentTypeVal" />
+                    <script>
+                        var rentType = ["不限","整租","合租","短租"];
+                        getSelectData(rentType, 'rentType','jk-ca-tag', 'rentTypeVal','tag-hover', true, '不限');
+                    </script>
+
+                    <!-- 户型 -->
                     <div class="jk-houseType-tit">户型</div>
-                    <div class="jk-houseType-con tag-parent">
-                        <div class="jk-tag-4"><p class="jk-ca-tag tag-hover">不限</p></div>
-                        <div class="jk-tag-4"><p class="jk-ca-tag">1室1室1室</p></div>
-                        <div class="jk-tag-4"><p class="jk-ca-tag">2室</p></div>
-                        <div class="jk-tag-4"><p class="jk-ca-tag">3室</p></div>
-                        <div class="jk-tag-4"><p class="jk-ca-tag">4+室</p></div>
-                        <div class="jk-tag-4"><p class="jk-ca-tag">4+室</p></div>
-                        <div class="jk-tag-4"><p class="jk-ca-tag">4+室</p></div>
-                        <div class="jk-tag-4"><p class="jk-ca-tag">4+室</p></div>
-                        <div class="jk-tag-4"><p class="jk-ca-tag">4+室</p></div>
-                        <div class="jk-tag-4"><p class="jk-ca-tag">4+室</p></div>
+                    <div class="jk-houseType-con tag-parent" id="rentHoseType">
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="0">不限</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="1">1室</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="2">2室</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="3">3室</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="4">4+室</p></div>
                     </div>
+                    <input type="hidden" name="rentHoseTypeVal" id="rentHoseTypeVal" />
+                    <script>
+                        var rentHoseType = ["不限","1室","2室","3室","4+室"];
+                        getSelectData(rentHoseType, 'rentHoseType','jk-ca-tag', 'rentHoseTypeVal','tag-hover', true, '不限');
+                    </script>
                 </div>
                 
                 <div class="jk-screen-btn">
                     <button class="blue-btn" type="submit">确定</button>
                 </div>
-            </form>
-        </div>
-        <!-- 户型筛选  end-->
+            </div>
+            <!-- 户型筛选  end-->
 
-        <!-- 筛选  start-->
-        <div class="jkScreenItem" id="screenScreen">
-            <form action="./index.html">
+            <!-- 筛选  start-->
+            <div class="jkScreenItem" id="screenScreen">
                 <div class="jkscreenScreen">
-                        <div class="jk-screenScreen-tit">出租要求</div>
-                        <div class="jk-screenScreen-con tag-parent">
-                            <div class="jk-tag-4"><p class="jk-ca-tag tag-hover">不限</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">只限女生</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">半年起租</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">一家人</p></div>
-                        </div>
-                        <div class="jk-screenScreen-tit">朝向</div>
-                        <div class="jk-screenScreen-con tag-parent">
-                            <div class="jk-tag-4"><p class="jk-ca-tag tag-hover">不限</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">东</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">南</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">西</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">北</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">南北</p></div>
-                        </div>
-                        <div class="jk-screenScreen-tit">房源特色</div>
-                        <div class="jk-screenScreen-con tag-parent">
-                            <div class="jk-tag-4"><p class="jk-ca-tag tag-hover">不限</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">临高铁</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">押一付一</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">配套齐全</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">精装修</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">普通装修</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">南北通透</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">有阳台</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">首次出租</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">随时看房</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">女生合租</p></div>
-                            <div class="jk-tag-4"><p class="jk-ca-tag">男生合租</p></div>
-                        </div>
+                    <!-- 出租要求 -->
+                    <div class="jk-screenScreen-tit">出租要求</div>
+                    <div class="jk-screenScreen-con tag-parent" id="rentRequire">
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="0">不限</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="1">只限女生</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="2">半年起租</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="3">一家人</p></div>
                     </div>
+                    <input type="hidden" name="rentRequireVal" id="rentRequireVal" />
+                    <script>
+                        var rentRequire = ["不限","只限女生","半年起租","一家人"];
+                        getSelectData(rentRequire, 'rentRequire','jk-ca-tag', 'rentRequireVal','tag-hover', true, '不限');
+                    </script>
+
+                    <!-- 朝向 -->
+                    <div class="jk-screenScreen-tit">朝向</div>
+                    <div class="jk-screenScreen-con tag-parent" id="rendToward">
+                        <div class="jk-tag-4"><p class="jk-ca-tag tag-hover" data-id="0">不限</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="1">东</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="2">南</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="3">西</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="4">北</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="5">南北</p></div>
+                    </div>
+                    <input type="hidden" name="rendTowardVal" id="rendTowardVal" />
+                    <script>
+                        var rendToward = ["不限","东","南","西","北","南北"];
+                        getSelectData(rendToward, 'rendToward','jk-ca-tag', 'rendTowardVal','tag-hover', true, '不限');
+                    </script>
+
+                    <!-- 房源特色 -->
+                    <div class="jk-screenScreen-tit">房源特色</div>
+                    <div class="jk-screenScreen-con tag-parent" id="rentFeature">
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="0">不限</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="1">临高铁</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="2">押一付一</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="3">配套齐全</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="4">精装修</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="5">普通装修</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="6">南北通透</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="7">有阳台</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="8">首次出租</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="9">随时看房</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="10">女生合租</p></div>
+                        <div class="jk-tag-4"><p class="jk-ca-tag" data-id="11">男生合租</p></div>
+                    </div>
+                    <input type="hidden" name="rentFeatureVal" id="rentFeatureVal" />
+                    <script>
+                        var rentFeature = ["不限","临高铁","押一付一","配套齐全","精装修","普通装修","南北通透","有阳台","首次出租","随时看房","女生合租","男生合租"];
+                        getSelectData(rentFeature, 'rentFeature','jk-ca-tag', 'rentFeatureVal','tag-hover', true, '不限');
+                    </script>
+                </div>
                 <div class="jk-screen-btn">
                     <button class="blue-btn" type="submit">确定</button>
                 </div>
-            </form>
-        </div>
-        <!-- 筛选  end-->
+            </div>
+            <!-- 筛选  end-->
 
-        <!-- 排序  start-->
-        <div class="jkScreenItem" id="screenSort">
-            <form action="./index.html">
+            <!-- 排序  start-->
+            <div class="jkScreenItem" id="screenSort">
                 <div class="jk-screen-box jkFlex">
                     <div class="jk-screen-cont jkFlexItem">
                         <ul class="jk-screen-ui">
-                            <li class="shover"><a href="">默认排序</a></li>
-                            <li><a href="">价格从低到高</a></li>
-                            <li><a href="">价格从高到低</a></li>
-                            <li><a href="">发布从新到旧</a></li>
+                            <li class="shover"><button name="paixu" type="submit" value="price0">默认排序</button></li>
+                            <li><button name="paixu" type="submit" value="price1">价格从低到高</button></li>
+                            <li><button name="paixu" type="submit" value="price2">价格从高到低</button></li>
+                            <li><button name="paixu" type="submit" value="price3">发布从新到旧</button></li>
                         </ul>
                     </div>
                 </div>
-            </form>
-        </div>
-        <!-- 排序  end-->
-
+            </div>
+            <!-- 排序  end-->
+        </form>
     </div>
     <!-- 筛选 弹层 end-->
       

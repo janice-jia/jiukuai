@@ -1,0 +1,48 @@
+</html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JS标签选择器，点击文字标签赋值给输入框</title>
+<script src="./js/zepto.min.js"></script>
+<script src="./js/index.js"></script>
+<style>
+.tagItem{ width:100px; height:25px; line-height:25px; text-align:center; border:1px solid #eee; margin:10px; float:left; font-size:12px; cursor:pointer }
+    .tagHover{
+        background: pink;
+    }
+</style>
+</head>
+<body>
+<div align="center" id="tag">
+    <div class="tagItem tagHover" data-id="0">网有卖</div>
+    <div class="tagItem" data-id="1">ASP</div>
+    <div class="tagItem" data-id="2">PHP</div>
+    <div class="tagItem" data-id="3">JSP</div>
+    <div class="tagItem" data-id="4">NET</div>
+    <div class="tagItem" data-id="5">HTML</div>
+    <div class="tagItem" data-id="6">网站源码</div>
+</div>
+<div>---------</div>
+<input id="returnTagDataId" type="text" style="width:720px; height:25px; border:1px solid #ccc"/>
+<div>---------</div>
+<div align="center" id="tag1">
+    <div class="tagItem" data-id="0">网有卖</div>
+    <div class="tagItem" data-id="1">ASP</div>
+    <div class="tagItem" data-id="2">PHP</div>
+    <div class="tagItem" data-id="3">JSP</div>
+    <div class="tagItem" data-id="4">NET</div>
+    <div class="tagItem" data-id="5">HTML</div>
+    <div class="tagItem" data-id="6">网站源码</div>
+</div>
+<input id="returnTagDataId1" type="text" style="width:720px; height:25px; border:1px solid #ccc"/>
+<script>
+    // tag组件
+
+    var tagItem=["网有卖","ASP","PHP","JSP","NET","HTML"];
+    getSelectData(tagItem, 'tag','tagItem', 'returnTagDataId');
+    getSelectData(tagItem, 'tag1','tagItem', 'returnTagDataId1');
+
+    
+</script>
+</body>
+</html>

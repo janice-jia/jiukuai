@@ -112,6 +112,7 @@ a:focus{
     display: inline-block;
 }
 .jk-ca-tag{
+    cursor: pointer;
     margin: 0 0 0.15rem 0.15rem;
     height: 0.58rem;
     line-height: 0.58rem;
@@ -641,6 +642,9 @@ a:focus{
     padding: 0 0.15rem 0 0.15rem;
     z-index: 999;
     overflow:auto;
+    form{
+        height: 100%;
+    }
     .jkScreenItem{
         display: none;
         height: 100%;
@@ -650,7 +654,7 @@ a:focus{
 
         // 户型、筛选
         .jkscreenHouseType,.jkscreenScreen{
-            
+            padding-bottom: 1.5rem;
             .jk-screenScreen-tit,
             .jk-houseType-tit{
                 font-size: 0.28rem;
@@ -661,6 +665,7 @@ a:focus{
             
             .jk-screenScreen-con,
             .jk-houseType-con{
+                
                 .jk-ca-tag{
                     color: rgb(102,102,102);
                 }
@@ -670,18 +675,22 @@ a:focus{
             }
             
         }
-        
     }
     .jk-screen-form{
         height: 100%;
     }
     .jk-screen-box{
         height: 100%;
-        padding: 0 0 1.45rem 0;
         .jk-screen-cont{
             height: 100%;
             .jk-screen-ui{
+                padding-bottom: 1.5rem;
                 li{
+                    button{
+                        font-size: 0.28rem;
+                        color: rgb(102,102,102);
+                        border: none;
+                    }
                     font-size: 0.28rem;
                     color: rgb(102,102,102);
                     padding: 0.32rem 0;
@@ -691,7 +700,7 @@ a:focus{
                             color: rgb(44,106,219);
                         }
                     }
-                    a{
+                    a,button{
                         color: rgb(102,102,102);
                     }
                 }

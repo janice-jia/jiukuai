@@ -102,6 +102,7 @@ a:focus {
   display: inline-block; }
 
 .jk-ca-tag {
+  cursor: pointer;
   margin: 0 0 0.15rem 0.15rem;
   height: 0.58rem;
   line-height: 0.58rem;
@@ -516,43 +517,52 @@ a:focus {
   padding: 0 0.15rem 0 0.15rem;
   z-index: 999;
   overflow: auto; }
+  .jkScreen form {
+    height: 100%; }
   .jkScreen .jkScreenItem {
     display: none;
     height: 100%; }
     .jkScreen .jkScreenItem form {
       height: 100%; }
-    .jkScreen .jkScreenItem .jkscreenHouseType .jk-screenScreen-tit,
-    .jkScreen .jkScreenItem .jkscreenHouseType .jk-houseType-tit, .jkScreen .jkScreenItem .jkscreenScreen .jk-screenScreen-tit,
-    .jkScreen .jkScreenItem .jkscreenScreen .jk-houseType-tit {
-      font-size: 0.28rem;
-      color: #666666;
-      text-align: center;
-      margin: 0.8rem 0 0.4rem 0; }
-    .jkScreen .jkScreenItem .jkscreenHouseType .jk-screenScreen-con .jk-ca-tag,
-    .jkScreen .jkScreenItem .jkscreenHouseType .jk-houseType-con .jk-ca-tag, .jkScreen .jkScreenItem .jkscreenScreen .jk-screenScreen-con .jk-ca-tag,
-    .jkScreen .jkScreenItem .jkscreenScreen .jk-houseType-con .jk-ca-tag {
-      color: #666666; }
-    .jkScreen .jkScreenItem .jkscreenHouseType .jk-screenScreen-con .tag-hover,
-    .jkScreen .jkScreenItem .jkscreenHouseType .jk-houseType-con .tag-hover, .jkScreen .jkScreenItem .jkscreenScreen .jk-screenScreen-con .tag-hover,
-    .jkScreen .jkScreenItem .jkscreenScreen .jk-houseType-con .tag-hover {
-      color: #2c6adb; }
+    .jkScreen .jkScreenItem .jkscreenHouseType, .jkScreen .jkScreenItem .jkscreenScreen {
+      padding-bottom: 1.5rem; }
+      .jkScreen .jkScreenItem .jkscreenHouseType .jk-screenScreen-tit,
+      .jkScreen .jkScreenItem .jkscreenHouseType .jk-houseType-tit, .jkScreen .jkScreenItem .jkscreenScreen .jk-screenScreen-tit,
+      .jkScreen .jkScreenItem .jkscreenScreen .jk-houseType-tit {
+        font-size: 0.28rem;
+        color: #666666;
+        text-align: center;
+        margin: 0.8rem 0 0.4rem 0; }
+      .jkScreen .jkScreenItem .jkscreenHouseType .jk-screenScreen-con .jk-ca-tag,
+      .jkScreen .jkScreenItem .jkscreenHouseType .jk-houseType-con .jk-ca-tag, .jkScreen .jkScreenItem .jkscreenScreen .jk-screenScreen-con .jk-ca-tag,
+      .jkScreen .jkScreenItem .jkscreenScreen .jk-houseType-con .jk-ca-tag {
+        color: #666666; }
+      .jkScreen .jkScreenItem .jkscreenHouseType .jk-screenScreen-con .tag-hover,
+      .jkScreen .jkScreenItem .jkscreenHouseType .jk-houseType-con .tag-hover, .jkScreen .jkScreenItem .jkscreenScreen .jk-screenScreen-con .tag-hover,
+      .jkScreen .jkScreenItem .jkscreenScreen .jk-houseType-con .tag-hover {
+        color: #2c6adb; }
   .jkScreen .jk-screen-form {
     height: 100%; }
   .jkScreen .jk-screen-box {
-    height: 100%;
-    padding: 0 0 1.45rem 0; }
+    height: 100%; }
     .jkScreen .jk-screen-box .jk-screen-cont {
       height: 100%; }
-      .jkScreen .jk-screen-box .jk-screen-cont .jk-screen-ui li {
-        font-size: 0.28rem;
-        color: #666666;
-        padding: 0.32rem 0; }
-        .jkScreen .jk-screen-box .jk-screen-cont .jk-screen-ui li.shover {
-          color: #2c6adb; }
-          .jkScreen .jk-screen-box .jk-screen-cont .jk-screen-ui li.shover a {
+      .jkScreen .jk-screen-box .jk-screen-cont .jk-screen-ui {
+        padding-bottom: 1.5rem; }
+        .jkScreen .jk-screen-box .jk-screen-cont .jk-screen-ui li {
+          font-size: 0.28rem;
+          color: #666666;
+          padding: 0.32rem 0; }
+          .jkScreen .jk-screen-box .jk-screen-cont .jk-screen-ui li button {
+            font-size: 0.28rem;
+            color: #666666;
+            border: none; }
+          .jkScreen .jk-screen-box .jk-screen-cont .jk-screen-ui li.shover {
             color: #2c6adb; }
-        .jkScreen .jk-screen-box .jk-screen-cont .jk-screen-ui li a {
-          color: #666666; }
+            .jkScreen .jk-screen-box .jk-screen-cont .jk-screen-ui li.shover a {
+              color: #2c6adb; }
+          .jkScreen .jk-screen-box .jk-screen-cont .jk-screen-ui li a, .jkScreen .jk-screen-box .jk-screen-cont .jk-screen-ui li button {
+            color: #666666; }
     .jkScreen .jk-screen-box .screenBg {
       background: #fafafa; }
     .jkScreen .jk-screen-box .screenBg1 {
