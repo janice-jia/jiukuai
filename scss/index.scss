@@ -88,7 +88,7 @@ a:focus{
     text-align: left;
 }
 .tr{
-    text-align: right;
+    text-align: right !important;
 }
 .tag-parent{
     // display: grid;
@@ -128,6 +128,20 @@ a:focus{
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+}
+.jk-tag-Link{
+    display: inline-block;
+    width: 1.1rem;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    border-radius: 0.05rem;
+    color: rgb(44, 106, 219);
+    border: 1px solid rgb(44, 106, 219);
+    text-align: center;
+    font-size: 0.2rem;
+    position: relative;
+    z-index: 24;
+    margin-right: 0.2rem;
 }
 .tag-hover{
     background: rgba(94,144,243,0.5);
@@ -204,6 +218,33 @@ a:focus{
     .jkShareWechatTit{
         font-size: 0.28rem;
         color: rgb(51,51,51);
+    }
+}
+
+
+.jk-supplement{
+    height: 2.5rem;
+    position: relative;
+    textarea{
+        width: 100%;
+        height: 100%;
+        padding: 0.2rem;
+        text-indent: 2em;
+        border: 1px solid rgb(229,229,229);
+        border-radius: 0.05rem;
+        font-size: 0.24rem;
+        line-height: 0.4rem;
+        color: rgb(153, 153, 153);
+    }
+    .jk-swordNum{
+        position: absolute;
+        right: 0.2rem;
+        bottom: 0.2rem;
+        font-size: 0.24rem;
+        color: rgb(153, 153, 153);
+        .origin{
+            color: rgb(228,46,0);
+        }
     }
 }
 // 公用end
@@ -293,6 +334,33 @@ a:focus{
                 height: 1.5rem;
             }
         }
+        .jk-cont-Like{
+            .userLike{
+                position: absolute;
+                right: 0.15rem;
+                bottom: 0.3rem;
+                width: 0.4rem;
+                height: 0.4rem;
+                background: url(../images/icon-like.png) no-repeat;
+                background-size: 0.4rem 0.36rem;
+                display: inline-block;
+                z-index: 23;
+            }
+            .userLikeHover{
+                position: absolute;
+                right: 0.15rem;
+                bottom: 0.3rem;
+                width: 0.4rem;
+                height: 0.4rem;
+                background: url(../images/icon-like-hover.png) no-repeat;
+                background-size: 0.4rem 0.36rem;
+                display: inline-block;
+                z-index: 23;
+            }
+            .jk-cont-item-main{
+                padding-right: 0.55rem;
+            }
+        }
         .jk-cont-item{
             padding: 0.3rem 0;
             border-bottom: 0.03rem solid rgb(229,229,229);
@@ -328,6 +396,10 @@ a:focus{
                     color: rgb(136,136,136);
                     height: 0.4rem;
                     line-height: 0.4rem;
+                    .address{
+                        background: url(../images/icon-address.png) no-repeat;
+                        background-size: 0.16rem 0.23rem;
+                    }
                 }
             }
         }
@@ -343,6 +415,7 @@ a:focus{
     height: 1.15rem;
     background: rgb(255, 255, 255);
     z-index: 101;
+    box-shadow: 0px -0.5rem 0.5rem rgba(248,248,248,0.6);
     .jk-nav-item{
         position: relative;
         .nav-link{
@@ -702,6 +775,7 @@ a:focus{
                     }
                     a,button{
                         color: rgb(102,102,102);
+                        background: none;
                     }
                 }
             }
@@ -1139,6 +1213,14 @@ a:focus{
 
 /* 发布 start*/
 .jk-publish{
+    .jk-fk{
+        padding: 0.4rem 0 0.3rem 0.6rem;
+        font-size: 0.24rem;
+        color: rgb(153, 153, 153);
+    }
+    .h80{
+        height: 0.8rem !important;
+    }
     .jk-publish-item{
         display: flex;
         padding: 0 0.4rem;
@@ -1374,31 +1456,6 @@ a:focus{
         height: 0.4rem;
         line-height: 0.4rem;
     }
-    .jk-supplement{
-        height: 2.5rem;
-        position: relative;
-        textarea{
-            width: 100%;
-            height: 100%;
-            padding: 0.2rem;
-            text-indent: 2em;
-            border: 1px solid rgb(229,229,229);
-            border-radius: 0.05rem;
-            font-size: 0.24rem;
-            line-height: 0.4rem;
-            color: rgb(153, 153, 153);
-        }
-        .jk-swordNum{
-            position: absolute;
-            right: 0.2rem;
-            bottom: 0.2rem;
-            font-size: 0.24rem;
-            color: rgb(153, 153, 153);
-            .origin{
-                color: rgb(228,46,0);
-            }
-        }
-    }
 }
 /* 发布--第二步 end*/
 
@@ -1451,7 +1508,7 @@ a:focus{
         text-align: right;
         position: relative;
         img{
-            max-width: 100%;
+            width: 100%;
             display: inline-block;
             vertical-align: bottom;
         }
@@ -1500,6 +1557,218 @@ a:focus{
             .jk-rent-photoBtn{
                 background: url(../images/icon-add.png) center no-repeat;
                 background-size: 0.48rem 0.48rem;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                top:0;
+                input{
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    z-index: 100;
+                    opacity: 0;
+                }
+            }
+        }
+        
+    }
+}
+
+
+// 个人中心
+.jk-my{
+    padding-bottom: 1.9rem;
+    .jk-avatar{
+        position: relative;
+        padding: 0.9rem 0 0.4rem 0;
+        .jk-change-my{
+            position: absolute;
+            right: 0;
+            top: 0.5rem;
+            display: inline-block;
+            width: 1.36rem;
+            height: 0.4rem;
+            line-height: 0.4rem;
+            font-size: 0.22rem;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            background: rgb(44, 106, 219);
+            border-top-left-radius: 0.2rem;
+            border-bottom-left-radius: 0.2rem;
+        }
+        .jk-avatar-img{
+            margin: 0 auto 0.2rem auto;
+            width: 1.8rem;
+            height: 1.8rem;
+            border-radius: 50%;
+            box-shadow:rgba(0, 0, 0,0.3) 0px 0px 0.2rem inset;
+            img{
+                border-radius: 50%;
+                width: 100%;
+                height: 100%;
+            }
+            
+        }
+        .jk-userName{
+            font-size: 0.3rem;
+            color: rgb(51,51,51);
+            text-align: center;
+        }
+        .jk-userEdit{
+            text-align: center;
+            .jk-userEdit-link{
+                font-size: 0.18rem;
+                display: inline-block;
+                color: rgb(102,102,102);
+                position: relative;
+                padding-right: 0.2rem;
+                height: 0.2.6rem;
+                line-height: 0.26rem;
+                &:after{
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 0.14rem;
+                    height: 100%;
+                    background: url(../images/icon-edit.png) no-repeat center;
+                    background-size: 0.13rem 0.14rem;
+                }
+            }
+        }
+    }
+    
+    .jk-info-link{
+        ul{
+            li{
+                height: 1.2rem;
+                line-height: 1.2rem;
+                border-top: 1px solid rgb(242,242,242);
+                a{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 0.28rem;
+                    color: rgb(51,51,51);
+                    padding: 0 0.3rem 0 1.1rem;
+                }
+                
+                &.jk-info-linkItem{
+                    background-size: 0.3rem 0.3rem;
+                    .item1{
+                        background: url(../images/icon-userlink1.png) no-repeat 0.3rem center;
+                    }
+                    .item2{
+                        background: url(../images/icon-userLink2.png) no-repeat 0.3rem center;
+                    }
+                    .item3{
+                        background: url(../images/icon-userLink3.png) no-repeat 0.3rem center;
+                    }
+                    .item4{
+                        background: url(../images/icon-userLink4.png) no-repeat 0.3rem center;
+                    }
+                    .item5{
+                        background: url(../images/icon-userLink5.png) no-repeat 0.3rem center;
+                    }
+                    .item6{
+                        background: url(../images/icon-userLink6.png) no-repeat 0.3rem center;
+                    }
+                }
+                &.logout{
+                    padding: 0;
+                    a{
+                        padding: 0;
+                        color: rgb(153, 153, 153);
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// 暂无信息空页面
+.jk-null{
+    padding: 4.5rem 0.3rem 0 0.3rem;
+    background: url(../images/null.png) no-repeat center 2.42rem;
+    background-size: 1.92rem;
+    .jk-null-tit{
+        font-size: 0.36rem;
+        color: rgb(51,51,51);
+        text-align: center;
+        font-weight: bold;
+    }
+    .jk-null-desc{
+        padding: 0.1rem 0 0 0;
+        font-size: 0.2rem;
+        color: rgb(153, 153, 153);
+        text-align: center;
+    }
+    .jk-null-btn{
+        text-align: center;
+        margin: 0.4rem 0;
+        .jkNlink{
+            display: inline-block;
+            width: 2.46rem;
+            height: 0.62rem;
+            line-height: 0.62rem;
+            border:1px solid rgb(153,153,153);
+            border-radius: 0.05rem;
+            text-align: center;
+            font-size: 0.28rem;
+            color: rgb(51,51,51);
+        }
+    }
+}
+
+
+// 意见反馈
+.jk-suggestions{
+    padding: 0.3rem;
+    .jk-sTit{
+        font-size: 0.28rem;
+        color: rgb(51,51,51);
+        margin: 0 0 0.3rem 0;
+        span{
+            float:right;
+            color: rgb(153, 153, 153);
+        }
+    }
+   .jk-sText{
+       height: 3rem;
+       margin: 0 0 0.3rem 0;
+   }
+
+   .tag-parent{
+       margin: 0 !important;
+       flex: auto;
+   }
+   .jk-sAdd-img{
+        margin: 0.2rem 0 0 0.2rem 0 !important;
+        .jkFlexItem{
+            float: left;
+            margin:0 0.3rem 0 0;
+        }
+        .jk-sAdd-imgItem{
+            height: 2rem;
+            width: 2rem;
+            margin-bottom: 0.2rem;
+            border:1px solid rgb(229, 229, 229);
+            position: relative;
+            border-radius: 0.05rem;
+            img{
+                width: 100%;
+                display: inline-block;
+                float: left;
+                border-radius: 0.05rem;
+            }
+            .jk-rent-photoBtn{
+                background: url(../images/add.png) center no-repeat;
+                background-size: 0.84rem 0.84rem;
                 height: 100%;
                 width: 100%;
                 position: absolute;

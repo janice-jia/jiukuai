@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <meta name="format-detection" content="telephone=no" /> 
-    <title>约看信息</title>
+    <title>我的--约看信息</title>
     <link rel="stylesheet" href="./dist/index.css" />
     <script src="./js/zepto.min.js"></script>
     <script src="./js/flexible_css.js"></script>
@@ -14,7 +14,6 @@
 <body>
     <div class="jk-lookbox">
 
-        <form action="./我的-约看信息--详细.html">
             <div class="jk-lookcon">
                 <div class="jk-lookconImg">
                     <img src="./images/recommend.jpg" alt="" />
@@ -35,15 +34,15 @@
                 <p class="jk-loonaddInfo">联系人信息</p>
                 <div class="jkFlex">
                     <div class="tl jklookaddlabel">姓名</div>
-                    <div class="jkFlexItem">
-                        <input type="text" />
+                    <div class="jkFlexItem tr">
+                        吴凡
                     </div>
                 </div>
                 <div class="jkFlex">
                     <div class="tl jklookaddlabel">性别</div>
                     <div class="jkFlexItem">
                         <div class="jk-checkBoxSkin jk-checkBoxVal">
-                            <input id="sex" class="jk-checkbox" name="check" type="checkbox" checked/>
+                            <input id="sex" class="jk-checkbox" name="check" type="checkbox" checked disabled="disabled"/>
                             <label for="sex" class="trigger"></label>
                             <span class="jk-checkbox-checkVal1">男士</span>
                             <span class="jk-checkbox-checkVal2">女士</span>
@@ -52,34 +51,18 @@
                 </div>
                 <div class="jkFlex">
                     <div class="tl jklookaddlabel">手机</div>
-                    <div class="jkFlexItem">
-                        <input class="tr" name="tel" type="text" placeholder="请填写手机号码"/>
+                    <div class="jkFlexItem tr">
+                        13109785643
                     </div>
                 </div>
                 <div class="jkFlex">
                     <div class="tl jklookaddlabel">期望看房时间</div>
-                </div>
-                <div class="jkFlex">
-                    <div class="jkFlexItem">
-                        <select name="lookday" id="">
-                            <option value="0">随时看房</option>
-                            <option value="1">今天</option>
-                            <option value="2">明天</option>
-                            <option value="3">后天</option>
-                        </select>
-                    </div>
-                    <div class="jkFlexItem">
-                        <select name="looktime" id="">
-                            <option value="0">全天</option>
-                        </select>
+                    <div class="jkFlexItem tr">
+                        随时/全天
                     </div>
                 </div>
             </div>
-        
-            <div class="jk-bottom">
-                <button class="jk-oneBtn-bottom" type="submit">提交约看</button>
-            </div>
-        </form>
+
     </div>
 </body>
 </html>
