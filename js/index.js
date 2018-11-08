@@ -131,7 +131,7 @@ function getSelectData(tagItem, itemBoxId, tagItemClassName, returnTagDataId, se
                 //首页筛选二级单独处理
                 if(itemBoxId == 'row1'){
                     $('#row2').remove();
-                    if(rowData[_thisI].child)
+                    if(rowData && rowData[_thisI].child)
                     addRow(rowData[_thisI].child, 1, 2);
                 }
 
