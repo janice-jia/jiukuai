@@ -178,7 +178,7 @@ function showTab(type){
         $(tabItemEle[1]).addClass('shover');
 
         //请求区域数据
-        $.get('/API.ashx?apicommand=', function (response) {
+        $.get('../index.html', function (response) {
             response = [
                 {name:"test1",child:['test1-1','test1-2','test1-3']},
                 {name:"test2",child:['test2-1','test2-2','test2-3']},
@@ -186,6 +186,7 @@ function showTab(type){
             ];
             // 区域
             var areaData = response;
+            console.info('areaData', areaData)
             //渲染区域dom及click事件
             addRow(areaData, 2, 1);
         })
@@ -194,7 +195,7 @@ function showTab(type){
     }else if(type == 'subWay'){
         $(tabItemEle[2]).addClass('shover');
         //请求区域数据
-        $.get('/API.ashx?apicommand=', function (response) {
+        $.get('../index.html', function (response) {
             response =  [
                 {name:"全北京",child:['test1-1','test1-2','test1-4']},
                 {name:"朝阳",child:['test2-1','test2-2','test2-5']},
@@ -202,6 +203,7 @@ function showTab(type){
             ];
             // 地铁
             var subWayData = response;
+            console.info('subWayData', subWayData)
             //渲染地铁dom及click事件
             addRow(subWayData, 2, 1);
         })
@@ -209,7 +211,11 @@ function showTab(type){
 }
 
 function addRow(rowData, addNum,rowNum){
-    var jkScreenItem = '<div class="addRow jk-screen-cont jkFlexItem screenBg" id="row'+rowNum+'">'+
+    var bg = 'screenBg';
+    if(addNum != 1){
+        bg = "screenBg1";
+    }
+    var jkScreenItem = '<div class="addRow jk-screen-cont jkFlexItem '+ bg+'" id="row'+rowNum+'">'+
                             '<ul class="jk-screen-ui">';
     var tagList = [];
     // 判断需要追加几行
@@ -247,3 +253,24 @@ function addRow(rowData, addNum,rowNum){
     }
 }
 
+//个人信息页面显示“我想住”选择
+function showScreenArea(){
+    $('.jkScreen').show();
+
+     //默认显示 附近
+     showTab('near');
+}
+
+// 个人信息页面“我想住弹层”点击完成之后的回显
+function getLikeplace(){
+    $('.jkScreen').hide();
+    console.info()
+    var screenType = $('#screenType').val();
+    if(screenType == '附近'){
+        var likePlaceVal =  $('#row1Val').val();
+        $('#likePlace').html(likePlaceVal);
+    }else{
+        var likePlaceVal =  $('#row1Val').val() + '/'+ $('#row2Val').val();
+        $('#likePlace').html(likePlaceVal);
+    }
+}

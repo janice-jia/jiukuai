@@ -713,7 +713,7 @@ a:focus{
     left: 0;
     display: none;
     padding: 0 0.15rem 0 0.15rem;
-    z-index: 999;
+    z-index: 200;
     overflow:auto;
     form{
         height: 100%;
@@ -1228,10 +1228,29 @@ a:focus{
         height: 1.38rem;
         border-bottom:1px solid rgb(247,247,247);
         position: relative;
+        .ft32{
+            font-size: 0.32rem;
+            a,p{
+                font-size: 0.32rem !important;
+            }
+        }
         .jk-publish-itemImg{
             img{
                 width: 0.79rem;
             }
+        }
+        .w45{
+            img{
+                width: 0.45rem;
+            }
+        }
+        .w51{
+            img{
+                width: 0.51rem;
+            }
+        }
+        .auLink{
+            color: rgb(44, 106, 219);
         }
         .jk-publish-itemType{
             width: 100%;
@@ -1377,6 +1396,7 @@ a:focus{
                     position: absolute;
                     z-index: 100;
                     opacity: 0;
+                    left: 0;
                 }
             }
         }
@@ -1392,40 +1412,50 @@ a:focus{
             font-size: 0.24rem;
         }
     }
-    .jk-group{
-        display: flex;
-        align-items: center;
-        height: 0.76rem;
-        margin: 0 0.3rem;
-        border-bottom: 1px solid rgb(242,242,242);
-        .jk-group-tit{
+
+}
+.jk-group{
+    display: flex;
+    align-items: center;
+    height: 0.76rem;
+    margin: 0 0.3rem;
+    border-bottom: 1px solid rgb(242,242,242);
+    .jk-group-tit{
+        height: 100%;
+        font-size: 0.28rem;
+        color: rgb(0,0,0);
+        text-align: left;
+        line-height: 0.76rem;
+    }
+    .jk-group-inputInfo{
+        flex: 1;
+        height: 100%;
+        font-size: 0.28rem;
+        color: rgb(153, 153, 153);
+        .jk-group-input,.jk-group-select{
+            width: 100%;
             height: 100%;
             font-size: 0.28rem;
-            color: rgb(0,0,0);
-            text-align: left;
-            line-height: 0.76rem;
+            border: none;
+            color: rgb(153, 153, 153);
+            text-align: right;
         }
-        .jk-group-inputInfo{
-            flex: 1;
-            height: 100%;
+        .jk-group-p{
             font-size: 0.28rem;
             color: rgb(153, 153, 153);
-            .jk-group-input,.jk-group-select{
-                width: 100%;
-                height: 100%;
-                font-size: 0.28rem;
-                border: none;
-                color: rgb(153, 153, 153);
-                text-align: right;
-            }
-            .jk-group-select{
-                float: right;
-                direction: rtl;
-                background: none;
-                color: rgb(153, 153, 153);
-            }
+            line-height: 0.76rem;
         }
-        
+        .jk-group-select{
+            float: right;
+            direction: rtl;
+            background: none;
+            color: rgb(153, 153, 153);
+        }
+    }
+    .jkInfotr{
+        color: rgb(51,51,51);
+        text-align: right;
+        line-height: 0.76rem;
     }
 }
 /* 发布--整租  end*/
@@ -1786,5 +1816,91 @@ a:focus{
             }
         }
         
+    }
+}
+
+
+
+// 用户详细资料
+.jk-information{
+    padding-bottom: 1.6rem;
+    .jk-inf-avatar{
+        padding: 0.3rem;
+        height: 3.6rem;
+        position: relative;
+        .jk-inf-avatarBtn{
+            background: url(../images/addAvatarPhoto.png) center no-repeat;
+            background-size: 1.31rem 0.99rem;
+            height: 3rem;
+            width: 3rem;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            margin: -1.5rem 0 0 -1.5rem;
+            border: 1px dashed rgb(153, 153, 153);
+            input{
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                z-index: 100;
+                opacity: 0;
+                left: 0;
+            }
+        }
+    }
+    .jk-inf-avatarImg{
+        height: 3rem;
+        width: 3rem;
+        margin: 0 auto;
+        img{
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+
+    .jk-userinforText{
+        padding: 0 0.3rem;
+        textarea{
+            text-indent: 0;
+        }
+    }
+
+    .jkScreen{
+        z-index: 999;
+        padding-right: 0;
+        padding-left: 0.3rem;
+        .jkScreenItem{
+            display: block;
+        }
+        .jkScreen-pag{
+            margin: 0 0.3rem 0 0;
+            height: 0.9rem;
+            line-height: 0.9rem;
+            border-bottom: 1px solid rgb(214,214,214);
+            span{
+                padding-right: 0.2rem;
+            }
+        }
+    }
+}
+
+// 认证
+.jk-authen{
+    .tit1{
+        font-size: 0.24rem;
+        color: rgb(153, 153, 153);
+        padding: 0.4rem 0.3rem;
+    }
+    .jk-group{
+        padding: 0 0.3rem;
+        margin: 0;
+    }
+    .jkInfotl{
+        color: rgb(51,51,51);
+        text-align: left;
+        line-height: 0.76rem;
+        a{
+            color: rgb(228,80,0);
+        }
     }
 }

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" /> 
+    <title>编辑资料</title>
+    <link rel="stylesheet" href="./dist/index.css" />
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/flexible_css.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <div class="jk-information">
+        <form action="./userInformation.html">
+            <div class="jk-inf-avatar">
+                <div class="jk-inf-avatarBtn">
+                    <input type="file" />
+                </div>
+                <!-- <div class="jk-inf-avatarImg">
+                    <img src="./images/avatar.jpg" alt="">
+                </div> -->
+                
+            </div>
+
+        
+            <div class="jk-information-edit">
+                <div class="jk-group">
+                    <div class="jk-group-tit">我想住：</div>
+                    <div class="jk-group-inputInfo jkInfotr">
+                        <p class="jk-group-p"  readonly="readonly" onclick="showScreenArea()" id="likePlace">请填写信息</p>
+                    </div>
+                </div>
+                <div class="jk-group">
+                    <div class="jk-group-tit">生日：</div>
+                    <div class="jk-group-inputInfo jkInfotr">
+                        <input type="input" class="jk-group-select"  name="birthday" id="birthday" placeholder="请选择内容"/>
+                    </div>
+                </div>
+                <div class="jk-group">
+                    <div class="jk-group-tit">家乡：</div>
+                    <div class="jk-group-inputInfo jkInfotr">
+                        <input type="input" class="jk-group-select"  name="hometown" id="hometown" placeholder="请选择内容"/>
+                    </div>
+                </div>
+                <div class="jk-group">
+                    <div class="jk-group-tit">情感：</div>
+                    <div class="jk-group-inputInfo jkInfotr">
+                        <input type="input" class="jk-group-select"  name="emotion" id="emotion" placeholder="请选择内容"/>
+                    </div>
+                </div>
+                <div class="jk-group">
+                    <div class="jk-group-tit">公司：</div>
+                    <div class="jk-group-inputInfo jkInfotr">
+                        <input class="jk-group-input" type="text" placeholder="请填写信息"/>
+                    </div>
+                </div>
+                <div class="jk-group">
+                    <div class="jk-group-tit">职业：</div>
+                    <div class="jk-group-inputInfo jkInfotr">
+                        <input class="jk-group-input" type="text" placeholder="请填写信息"/>
+                    </div>
+                </div>
+                <div class="jk-group" style="border-bottom:none;">
+                    <div class="jk-group-tit">个性签名：</div>
+                </div>
+
+                <div class="jk-userinforText">
+                    <div class="jk-supplement">
+                        <textarea name="" id="" cols="30" rows="10" placeholder="还有什么想介绍的？"></textarea>
+                        <p class="jk-swordNum"><span class="origin">22</span> / 100字以内</p>
+                    </div>
+                </div>
+            
+            </div>
+
+            <div class="jk-bottom">
+                <button class="jk-oneBtn-bottom" type="submit">完成</button>
+            </div>
+
+
+
+
+             <!-- 区域筛选  start-->
+             <div class="jkScreen">
+                 <div class="jkScreen-pag">
+                     <span>当前城市</span>
+                     <span>北京</span>
+                     <span>></span>
+                 </div>
+                <div class="jkScreenItem" id="screenArea">
+                    <div class="jk-screen-box jkFlex" id="jkScreenArea">
+    
+                        <!-- 附近 start-->
+                        <div class="jk-screen-cont jkFlexItem tl">
+                            <ul class="jk-screen-ui">
+                                <li class="showTabItem shover" id="near" onclick="showTab('near')">附近</li>
+                                <li class="showTabItem" id="area" onclick="showTab('area')">区域</li>
+                                <li class="showTabItem" id="subWay" onclick="showTab('subWay')">地铁</li>
+                                <input type="hidden" name="screenType" id="screenType">
+                            </ul>
+                        </div>
+                        <!-- 附近 end-->
+            
+                    </div>
+                    <div class="jk-screen-btn">
+                        <button class="blue-btn" type="button" onclick="getLikeplace()">确定</button>
+                    </div>
+                    
+                </div>
+             </div>
+             
+            <!-- 区域筛选  end-->
+        </form>
+        
+    </div>
+
+    <script src="js/jquery.selector-px.js"></script>
+    <script>
+    
+        // 生日
+        $.dateSelector({
+            evEle: '#birthday',
+            startYear: '2017',
+            endYear: '2022',
+            timeBoo: false,
+            afterAction: function (d1, d2, d3) {
+                $('#birthday').val(d1 + '年' + d2 + '月' + d3 + '日');
+            }
+        });
+
+        //家乡
+        var hometown = ['上海', '北京','山东','重庆','安徽'];
+        $.scrEvent({
+            data: hometown,
+            evEle: '#hometown',
+            title: '',
+            defValue: '北京',
+            afterAction: function (data) {
+                $("#hometown").val(data);
+            }
+        });
+
+        //情感
+        var emotion = ['单身', '恋爱中','已婚','丧偶'];
+        $.scrEvent({
+            data: emotion,
+            evEle: '#emotion',
+            title: '',
+            defValue: '恋爱中',
+            afterAction: function (data) {
+                $("#emotion").val(data);
+            }
+        });
+        
+    </script>
+</body>
+</html>
