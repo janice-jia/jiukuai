@@ -170,14 +170,41 @@ function showTab(type){
     $('#screenType'). val($('#'+type).html());
     $('.addRow').remove();
     if(type == 'near'){
+        // 默认附近
+        var rentNear = ["不限","1000m内","2000m内","3000m内"];
         $(tabItemEle[0]).addClass('shover');
         addRow(rentNear, 1, 1);
     }else if(type == 'area'){
         $(tabItemEle[1]).addClass('shover');
-        addRow(areaData, 2, 1);
+
+        //请求区域数据
+        $.get('/API.ashx?apicommand=', function (response) {
+            response = [
+                {name:"test1",child:['test1-1','test1-2','test1-3']},
+                {name:"test2",child:['test2-1','test2-2','test2-3']},
+                {name:"test3",child:['test3-1','test3-2','test3-3']}
+            ];
+            // 区域
+            var areaData = response;
+            //渲染区域dom及click事件
+            addRow(areaData, 2, 1);
+        })
+
+
     }else if(type == 'subWay'){
         $(tabItemEle[2]).addClass('shover');
-        addRow(subWayData, 2, 1);
+        //请求区域数据
+        $.get('/API.ashx?apicommand=', function (response) {
+            response =  [
+                {name:"全北京",child:['test1-1','test1-2','test1-4']},
+                {name:"朝阳",child:['test2-1','test2-2','test2-5']},
+                {name:"昌平",child:['test3-1','test3-2','test3-3']}
+            ];
+            // 地铁
+            var subWayData = response;
+            //渲染地铁dom及click事件
+            addRow(subWayData, 2, 1);
+        })
     }
 }
 
